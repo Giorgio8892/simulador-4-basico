@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pruebas Globales 4° Básico - Banco Interactivo</title>
+  <title>Super Globales 4° Básico - Banco Interactivo</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts para un diseño infantil premium y legible -->
+  <!-- Google Fonts para diseño infantil premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-    }
-    .title-font {
-      font-family: 'Fredoka', sans-serif;
-    }
-    /* Animación de gradiente fluido para el botón llamativo de Terminar */
+    body { font-family: 'Quicksand', sans-serif; }
+    .title-font { font-family: 'Fredoka', sans-serif; }
     @keyframes gradient-shift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -27,44 +22,36 @@
       background-size: 200% 200%;
       animation: gradient-shift 3s ease infinite;
     }
-    /* Efecto de pulso de atención extra para niños */
     .pulse-ring {
       box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7);
       animation: pulse-ring-anim 1.6s cubic-bezier(0.66, 0, 0, 1) infinite;
     }
     @keyframes pulse-ring-anim {
-      to {
-        box-shadow: 0 0 0 14px rgba(244, 63, 94, 0);
-      }
+      to { box-shadow: 0 0 0 14px rgba(244, 63, 94, 0); }
     }
   </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-50 via-pink-50 to-emerald-50 min-h-screen text-slate-800 pb-12">
 
-  <!-- PANTALLA DE REGISTRO (Se muestra si no está registrado) -->
+  <!-- PANTALLA DE REGISTRO OBLIGATORIA -->
   <div id="registration-screen" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border-4 border-indigo-200 text-center space-y-6 transform transition-all">
+    <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl border-4 border-indigo-200 text-center space-y-6">
       <div class="text-5xl animate-bounce">🎓</div>
       <div class="space-y-2">
         <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 title-font">¡Bienvenido a Super Globales!</h2>
-        <p class="text-sm text-slate-500 font-medium">Por favor, escribe tus datos de estudiante para comenzar tu prueba oficial del I Semestre.</p>
+        <p class="text-sm text-slate-500 font-medium">Escribe tus datos para comenzar tu práctica o evaluación del semestre.</p>
       </div>
       
       <form id="registration-form" onsubmit="handleRegistration(event)" class="space-y-4 text-left">
         <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nombre(s)</label>
-          <input type="text" id="student-name" required placeholder="Ej: Matías" 
-                 class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold transition-all text-slate-700">
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Apellido(s)</label>
-          <input type="text" id="student-lastname" required placeholder="Ej: Soto" 
-                 class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold transition-all text-slate-700">
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nombre del Estudiante</label>
+          <input type="text" id="student-name" required placeholder="Ej: Noemí" 
+                 class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold text-slate-700">
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Curso</label>
-            <select id="student-grade" class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold transition-all text-slate-700">
+            <select id="student-grade" class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold text-slate-700">
               <option value="4° Básico A">4° Básico A</option>
               <option value="4° Básico B">4° Básico B</option>
               <option value="4° Básico C">4° Básico C</option>
@@ -72,12 +59,10 @@
           </div>
           <div>
             <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Fecha</label>
-            <input type="date" id="student-date" required
-                   class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold transition-all text-slate-700">
+            <input type="date" id="student-date" required class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none font-semibold text-slate-700">
           </div>
         </div>
-
-        <button type="submit" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl text-md transition-all shadow-lg shadow-indigo-100 flex items-center justify-center gap-2">
+        <button type="submit" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-lg flex items-center justify-center gap-2">
           <span>🚀</span> ¡Comenzar mi Super Prueba!
         </button>
       </form>
@@ -85,1792 +70,582 @@
   </div>
 
   <!-- Header / Barra de Navegación -->
-  <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all">
+  <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <span class="text-3xl animate-bounce">🎒</span>
         <div>
           <h1 class="text-xl md:text-2xl font-bold text-indigo-700 title-font tracking-wide">Super Globales 4° Básico</h1>
-          <!-- HUD de Estudiante -->
-          <p id="student-hud-lbl" class="text-xs text-slate-500 font-semibold">Cargando datos del estudiante...</p>
+          <p id="student-hud-lbl" class="text-xs text-slate-500 font-semibold">Cargando datos...</p>
         </div>
-      </div>
-      <div class="flex items-center gap-2">
-        <button onclick="switchTab('simulator')" id="btn-tab-sim" class="px-4 py-2 rounded-full font-bold text-sm transition-all bg-indigo-600 text-white shadow-md shadow-indigo-100">
-          🎮 Modo Práctica
-        </button>
-        <button onclick="switchTab('raw-json')" id="btn-tab-json" class="px-4 py-2 rounded-full font-bold text-sm transition-all bg-slate-100 text-slate-600 hover:bg-slate-200">
-          ⚙️ Exportar JSON para GitHub
-        </button>
       </div>
     </div>
   </header>
 
   <main class="max-w-6xl mx-auto px-4 mt-6">
-
-    <!-- TAB 1: SIMULADOR INTERACTIVO -->
     <section id="tab-simulator" class="space-y-6">
       
-      <!-- Panel de Control y Filtros de Materia -->
+      <!-- Panel de Control e Interfaz de Materias -->
       <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
         <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
           <h2 class="text-lg font-bold text-slate-700 title-font flex items-center gap-2">
-            <span>🔍</span> Selecciona la materia para evaluar (¡10 preguntas al azar por materia!)
+            <span>🔍</span> Selecciona la asignatura para evaluar:
           </h2>
-          <!-- Control de Modo -->
           <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
             <button onclick="setGameMode('practica')" id="btn-mode-practica" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-800 shadow-sm">
-              💡 Práctica (Feedback inmediato)
+              💡 Modo Práctica
             </button>
             <button onclick="setGameMode('evaluacion')" id="btn-mode-evaluacion" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-700">
-              📝 Examen (Reporte al final)
+              📝 Modo Examen
             </button>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
-          <button onclick="filterSubject('todos')" class="filter-btn active px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-indigo-500 bg-indigo-50 text-indigo-700">
-            <span class="text-xl">🌈</span> Todos
+        <!-- Botones de Asignatura -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button onclick="filterSubject('todos')" id="btn-sub-todos" class="filter-btn px-4 py-3 rounded-2xl font-bold border-2 transition-all flex items-center justify-center gap-2 border-indigo-500 bg-indigo-50 text-indigo-700">
+            <span>🌈</span> Todo el Semestre
           </button>
-          <button onclick="filterSubject('matematica')" class="filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-blue-400 text-slate-600 bg-white">
-            <span class="text-xl">📐</span> Matemática
+          <button onclick="filterSubject('matematica')" id="btn-sub-matematica" class="filter-btn px-4 py-3 rounded-2xl font-bold border-2 transition-all flex items-center justify-center gap-2 border-slate-200 bg-white text-slate-600 hover:border-indigo-400">
+            <span>📐</span> Matemática (Cap. 1, 3, 4 y 5)
           </button>
-          <button onclick="filterSubject('historia')" class="filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-amber-400 text-slate-600 bg-white">
-            <span class="text-xl">🗺️</span> Geografía
-          </button>
-          <button onclick="filterSubject('ciencias')" class="filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-emerald-400 text-slate-600 bg-white">
-            <span class="text-xl">🌋</span> Ciencias Nat.
-          </button>
-          <button onclick="filterSubject('lenguaje')" class="filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-pink-400 text-slate-600 bg-white">
-            <span class="text-xl">📖</span> Lenguaje
-          </button>
-          <button onclick="filterSubject('ingles')" class="filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-violet-400 text-slate-600 bg-white">
-            <span class="text-xl">💂</span> Inglés
+          <button onclick="filterSubject('historia')" id="btn-sub-historia" class="filter-btn px-4 py-3 rounded-2xl font-bold border-2 transition-all flex items-center justify-center gap-2 border-slate-200 bg-white text-slate-600 hover:border-indigo-400">
+            <span>🗺️</span> Historia y Geografía (Guía Completa)
           </button>
         </div>
 
         <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm text-slate-600">
           <div class="flex items-center gap-2">
-            <span class="font-semibold text-indigo-600" id="total-count-lbl">0</span> preguntas seleccionadas al azar en este bloque.
+            Evaluando <span class="font-bold text-indigo-600" id="total-count-lbl">0</span> preguntas en este bloque.
           </div>
-          
-          <!-- BOTÓN TERMINAR EXTREMADAMENTE LLAMATIVO (HEADER) -->
           <div class="flex items-center gap-3">
-            <span class="flex items-center gap-1"><span class="text-amber-500">⭐</span> Score: <strong id="score-lbl" class="text-indigo-600 font-bold">0</strong></span>
-            <button onclick="showResultsTab()" id="btn-force-finish" class="pulse-ring animate-gradient-fast px-6 py-2.5 bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 hover:scale-105 hover:brightness-110 text-white text-xs md:text-sm font-black uppercase tracking-wider rounded-full transition-all shadow-md shadow-rose-200">
-              🏁 Terminar y Evaluar
+            <span class="flex items-center gap-1">⭐ Puntaje: <strong id="score-lbl" class="text-indigo-600 font-bold">0</strong></span>
+            <button onclick="showResultsTab()" class="pulse-ring animate-gradient-fast px-6 py-2.5 bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 hover:scale-105 text-white text-xs font-black uppercase tracking-wider rounded-full transition-all shadow-md">
+              🏁 Finalizar y Ver Nota
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Tarjeta de Pregunta Activa -->
-      <div id="trivia-active-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Columna de Ejercitación -->
+      <!-- Bloque Activo de Preguntas -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="lg:col-span-2 space-y-6">
-          <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 relative overflow-hidden min-h-[420px] flex flex-col justify-between">
+          <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 min-h-[480px] flex flex-col justify-between relative overflow-hidden">
             
-            <!-- Barra de Progreso Interna -->
             <div class="absolute top-0 left-0 right-0 h-1.5 bg-slate-100">
               <div id="active-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-pink-500 transition-all duration-300" style="width: 0%"></div>
             </div>
 
-            <!-- Header de Pregunta -->
-            <div class="flex items-center justify-between mb-4">
-              <span id="subject-badge" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700">
-                -
-              </span>
-              <span class="text-xs font-semibold text-slate-400" id="index-lbl">
-                Pregunta 0 de 0
-              </span>
+            <div class="flex items-center justify-between mb-2">
+              <span id="subject-badge" class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700">-</span>
+              <span class="text-xs font-semibold text-slate-400" id="index-lbl">Pregunta 0 de 0</span>
             </div>
 
-            <!-- Enunciado Principal -->
-            <div class="my-auto space-y-6">
-              <div class="text-lg md:text-xl font-bold text-slate-800 leading-relaxed" id="question-text">
-                Cargando pregunta...
-              </div>
+            <!-- CONTENEDOR DEDICADO PARA DIBUJOS MAPAS INTERACTIVOS DIGITALES -->
+            <div id="map-vector-container" class="w-full hidden mb-4">
+              <!-- Se autogenera mediante JavaScript según el ID de la pregunta -->
+            </div>
 
-              <!-- Contenedor Alternativas -->
-              <div id="options-container" class="grid grid-cols-1 gap-3 hidden">
-                <!-- Se inyectan dinámicamente -->
-              </div>
+            <div class="my-auto space-y-4">
+              <div class="text-md md:text-lg font-bold text-slate-800 leading-relaxed" id="question-text">Cargando pregunta...</div>
+              
+              <!-- Opciones de Selección Múltiple -->
+              <div id="options-container" class="grid grid-cols-1 gap-2.5"></div>
 
-              <!-- Contenedor Desarrollo Corto -->
-              <div id="desarrollo-container" class="space-y-4 hidden">
-                <label class="block text-sm font-bold text-slate-500 uppercase tracking-wider">Escribe tu respuesta exacta:</label>
-                <div class="flex gap-2">
-                  <input type="text" id="desarrollo-input" autocomplete="off" placeholder="Escribe tu respuesta..." 
-                         class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none text-lg font-bold transition-all text-slate-700">
-                  <button onclick="checkDesarrolloAnswer()" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl transition-all shadow-md shadow-emerald-100 font-sans tracking-wide">
-                    Guardar
-                  </button>
-                </div>
-                <p class="text-xs text-slate-400">Nota: Al guardar se registrará tu respuesta para el reporte evaluativo final.</p>
+              <!-- Entrada de Desarrollo Corto -->
+              <div id="desarrollo-container" class="space-y-2 hidden">
+                <input type="text" id="desarrollo-input" placeholder="Escribe tu respuesta exacta aquí..." class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none text-md font-bold text-slate-700">
+                <button onclick="checkDesarrolloAnswer()" class="px-5 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm shadow-sm transition-all">Guardar Respuesta</button>
               </div>
             </div>
 
-            <!-- Panel de Estado / Feedback de Respuesta -->
-            <div id="feedback-panel" class="hidden mt-6 p-4 rounded-2xl border transition-all duration-300">
-              <div class="flex items-start gap-3">
-                <span id="feedback-icon" class="text-2xl"></span>
-                <div class="space-y-1">
-                  <h4 id="feedback-title" class="font-bold text-sm uppercase tracking-wide"></h4>
-                  <p id="feedback-desc" class="text-sm text-slate-600 font-medium"></p>
+            <!-- Feedback en Vivo (Modo Práctica) -->
+            <div id="feedback-panel" class="hidden mt-4 p-4 rounded-xl border border-slate-200 bg-slate-50">
+              <div class="flex gap-2">
+                <span id="feedback-icon" class="text-xl"></span>
+                <div>
+                  <h4 id="feedback-title" class="font-bold text-xs uppercase tracking-wide"></h4>
+                  <p id="feedback-desc" class="text-xs text-slate-600 font-medium mt-0.5"></p>
                 </div>
               </div>
             </div>
 
-            <!-- Footer de Control de Navegación -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-4 border-t border-slate-100">
-              <button onclick="prevQuestion()" class="px-4 py-2 text-slate-500 hover:text-indigo-600 font-bold text-sm flex items-center justify-center gap-1 transition-all">
-                ⬅️ Anterior
-              </button>
-              
-              <button onclick="revealExplanation()" id="btn-reveal" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl text-sm transition-all">
-                💡 Pista Didáctica
-              </button>
-              
-              <!-- Se alternará entre Siguiente o el Gran Botón de Finalizar Prueba según la posición -->
-              <div id="nav-right-container" class="flex justify-center">
-                <button id="btn-next-action" onclick="nextQuestion()" class="w-full sm:w-auto px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-1 transition-all shadow-md shadow-indigo-100">
-                  Siguiente ➡️
-                </button>
-              </div>
+            <!-- Botones de Navegación Interna -->
+            <div class="flex justify-between items-center mt-6 pt-4 border-t border-slate-100">
+              <button onclick="prevQuestion()" class="text-slate-400 hover:text-indigo-600 font-bold text-xs">⬅️ Anterior</button>
+              <button onclick="revealExplanation()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-lg text-xs">💡 Pista Didáctica</button>
+              <button id="btn-next-action" onclick="nextQuestion()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs shadow-sm">Siguiente ➡️</button>
             </div>
 
           </div>
         </div>
 
-        <!-- Columna de Lista de Preguntas / Navegación Rápida -->
-        <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-[520px]">
-          <h3 class="text-md font-bold text-slate-700 title-font mb-4 flex items-center justify-between">
+        <!-- Índice Rápido Lateral -->
+        <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 flex flex-col h-[480px]">
+          <h3 class="text-sm font-bold text-slate-700 title-font mb-3 flex justify-between items-center">
             <span>📋 Índice de Preguntas</span>
-            <span class="text-xs bg-slate-100 px-2.5 py-1 rounded-full text-slate-500" id="filtered-count">0 disp.</span>
+            <span class="text-xs bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-full font-bold" id="filtered-count">0</span>
           </h3>
-          <div id="quick-index-list" class="flex-1 overflow-y-auto space-y-1 pr-1">
-            <!-- Items de navegación rápida inyectados -->
-          </div>
+          <div id="quick-index-list" class="flex-1 overflow-y-auto space-y-1 pr-1"></div>
         </div>
-
       </div>
 
-      <!-- INFORME DE RESULTADOS / REPORT CARD (Se activa al terminar la prueba) -->
-      <div id="report-card-container" class="hidden bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-2 border-indigo-100 space-y-8 animate-fade-in">
-        <div class="text-center space-y-3">
-          <div class="text-6xl">🏆</div>
-          <h2 class="text-3xl font-bold text-indigo-700 title-font">Reporte de Resultados Oficial</h2>
-          <p class="text-slate-500 font-medium max-w-lg mx-auto">
-            ¡Felicidades, <span id="report-student-name" class="font-bold text-indigo-600">-</span>! Has finalizado el proceso de evaluación de 4° Básico del Colegio.
-          </p>
+      <!-- REPORTE DE EVALUACIÓN FINAL -->
+      <div id="report-card-container" class="hidden bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-2 border-indigo-100 space-y-6">
+        <div class="text-center space-y-2">
+          <div class="text-5xl">🏆</div>
+          <h2 class="text-2xl font-bold text-indigo-700 title-font">Reporte de Calificaciones Oficial</h2>
+          <p class="text-slate-500 font-medium text-sm">¡Felicitaciones, <span id="report-student-name" class="font-bold text-indigo-600">-</span>! Has terminado tu evaluación de 4° Básico.</p>
         </div>
 
-        <!-- Ficha de Datos del Alumno -->
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
-          <div>
-            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Estudiante</span>
-            <strong id="card-fullname" class="text-slate-700 text-sm">-</strong>
-          </div>
-          <div>
-            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Curso</span>
-            <strong id="card-grade" class="text-slate-700 text-sm">-</strong>
-          </div>
-          <div>
-            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Fecha de Rendición</span>
-            <strong id="card-date" class="text-slate-700 text-sm">-</strong>
-          </div>
-          <div>
-            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Materia Rendida</span>
-            <strong id="card-subject" class="text-indigo-600 text-sm uppercase font-bold">-</strong>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-50 p-4 rounded-2xl border text-center text-xs">
+          <div><span class="text-slate-400 block font-semibold">ESTUDIANTE</span><strong id="card-fullname" class="text-slate-700 text-sm">-</strong></div>
+          <div><span class="text-slate-400 block font-semibold">CURSO</span><strong id="card-grade" class="text-slate-700 text-sm">-</strong></div>
+          <div><span class="text-slate-400 block font-semibold">FECHA RENDICIÓN</span><strong id="card-date" class="text-slate-700 text-sm">-</strong></div>
         </div>
 
-        <!-- Métricas / Puntaje y Nota -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-indigo-50 border-2 border-indigo-100 rounded-2xl p-6 text-center space-y-2">
-            <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider block">Nota Evaluativa (60%)</span>
-            <span id="final-grade-lbl" class="text-5xl font-extrabold text-indigo-700 title-font block">1.0</span>
-            <p id="grade-feedback-text" class="text-xs text-indigo-600 font-medium"></p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-center">
+            <span class="text-[10px] font-bold text-indigo-500 uppercase tracking-wider block">Nota Escala Chile (60%)</span>
+            <span id="final-grade-lbl" class="text-4xl font-black text-indigo-700 title-font block">1.0</span>
           </div>
-          <div class="bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-6 text-center space-y-2">
-            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Preguntas Correctas</span>
-            <span id="corrects-count-lbl" class="text-5xl font-extrabold text-emerald-700 title-font block">0 / 0</span>
-            <p id="corrects-percentage-lbl" class="text-xs text-emerald-600 font-medium">0% de logro</p>
+          <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4 text-center">
+            <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">Correctas Obtenidas</span>
+            <span id="corrects-count-lbl" class="text-4xl font-black text-emerald-700 title-font block">0 / 0</span>
           </div>
-          <div class="bg-amber-50 border-2 border-amber-100 rounded-2xl p-6 text-center space-y-2 flex flex-col justify-center items-center">
-            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Estrellas Ganadas</span>
-            <div id="stars-row" class="text-3xl text-amber-500 tracking-wider">⭐⭐⭐⭐⭐</div>
+          <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 text-center flex flex-col justify-center items-center">
+            <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">Estrellas Ganadas</span>
+            <div id="stars-row" class="text-xl text-amber-500">⭐⭐⭐⭐⭐</div>
           </div>
         </div>
 
-        <!-- Desglose de Preguntas y Errores Cometidos -->
-        <div class="space-y-4">
-          <h3 class="text-xl font-bold text-slate-700 title-font flex items-center gap-2">
-            <span>🔎</span> Desglose Pedagógico de Respuestas
-          </h3>
-          <p class="text-xs text-slate-400">Revisa tus respuestas correctas y los errores cometidos. Estudia las explicaciones paso a paso para mejorar.</p>
-
-          <div id="results-detailed-list" class="space-y-4">
-            <!-- Dinámico -->
-          </div>
+        <div class="space-y-3">
+          <h3 class="text-md font-bold text-slate-700 title-font">🔎 Desglose Pedagógico de Respuestas</h3>
+          <div id="results-detailed-list" class="space-y-2"></div>
         </div>
 
-        <div class="flex justify-center gap-4 pt-4 border-t border-slate-100">
-          <button onclick="restartExam()" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl text-sm transition-all shadow-md shadow-indigo-100">
-            🔄 Volver a Rendir la Prueba
-          </button>
-          <button onclick="window.print()" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-2xl text-sm transition-all">
-            🖨️ Imprimir / Guardar PDF
-          </button>
+        <div class="flex justify-center gap-3 pt-2">
+          <button onclick="restartExam()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs shadow-md">🔄 Dar otra prueba</button>
+          <button onclick="window.print()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs">🖨️ Imprimir Reporte PDF</button>
         </div>
       </div>
 
     </section>
-
-    <!-- TAB 2: RAW JSON / CODIGO PARA GITHUB -->
-    <section id="tab-raw-json" class="space-y-4 hidden">
-      <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
-          <div>
-            <h2 class="text-xl font-bold text-slate-800 title-font">Esquema JSON Curricular (Perfecto para GitHub)</h2>
-            <p class="text-sm text-slate-500">Este es el bloque estructurado con los estándares de 4° Básico (Muestra aleatoria simulada de 10 preguntas por materia).</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="copyToClipboard()" class="px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-lg hover:bg-slate-700 transition-all">
-              📋 Copiar Código
-            </button>
-            <button onclick="downloadJSON()" class="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-lg hover:bg-emerald-500 transition-all">
-              💾 Descargar Archivo .json
-            </button>
-          </div>
-        </div>
-
-        <div class="relative">
-          <pre id="json-preview-block" class="bg-slate-950 text-emerald-400 p-4 rounded-2xl overflow-x-auto text-xs font-mono max-h-[500px] leading-relaxed"></pre>
-        </div>
-        <p class="text-xs text-slate-400 mt-2">💡 Tip: Puedes expandir o agregar más preguntas modificando directamente el arreglo Javascript del código fuente.</p>
-      </div>
-    </section>
-
   </main>
 
-  <!-- Notificación Toast -->
-  <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl font-semibold text-sm transition-all transform translate-y-20 opacity-0 z-50"></div>
-
   <script>
-    // BASE COMPLETA DE PREGUNTAS CURRICULARES DE 4° BÁSICO (Chile - I Semestre)
-    // Contiene exactamente 20 preguntas curriculares detalladas por cada una de las 5 asignaturas oficiales (Total: 100 preguntas).
-    const dbPreguntas = [
-      // ==========================================
-      // === MATEMÁTICA (IDs 1 al 20) ===
-      // ==========================================
-      {
-        "id": 1,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "¿Cuál es el valor posicional del dígito 5 en el número 4.567?",
-        "opciones": ["A) 5 unidades", "B) 5 decenas", "C) 5 centenas", "D) 5 unidades de mil"],
-        "correcta": "C",
-        "explicacion": "En el número 4.567, el 5 está en la posición de las centenas, representando 500 unidades (5 centenas)."
-      },
-      {
-        "id": 2,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Escribe el número exacto que se forma con la descomposición: 7UM + 3C + 8D + 2U",
-        "correcta": "7382",
-        "explicacion": "Agrupando las unidades de mil (7.000), centenas (300), decenas (80) y unidades (2) formamos el número 7.382."
-      },
-      {
-        "id": 3,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Si un libro cuesta $4.350 y un estuche cuesta $1.250, ¿cuánto pagas en total?",
-        "opciones": ["A) $5.500", "B) $5.600", "C) $5.550", "D) $5.650"],
-        "correcta": "B",
-        "explicacion": "Sumamos verticalmente: 4.350 + 1.250 = 5.600."
-      },
-      {
-        "id": 4,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Resuelve la siguiente resta con canje: 825 - 438 ¿Cuál es el valor numérico obtenido?",
-        "correcta": "387",
-        "explicacion": "Al restar 825 - 438 aplicando canjes correspondientes en decenas y centenas obtenemos 387."
-      },
-      {
-        "id": 5,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "¿Qué expresión representa la descomposición posicional correcta de 9.042?",
-        "opciones": ["A) 9UM + 4C + 2D", "B) 9UM + 4D + 2U", "C) 9C + 4D + 2U", "D) 9UM + 4C + 2U"],
-        "correcta": "B",
-        "explicacion": "El número tiene un 9 en las unidades de mil, 0 centenas, 4 decenas y 2 unidades (9UM + 4D + 2U)."
-      },
-      {
-        "id": 6,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Si resuelves de manera mental el cálculo rápido 450 + 150, ¿cuál es el resultado exacto?",
-        "correcta": "600",
-        "explicacion": "Puedes sumar 400 + 100 = 500 y luego agregar las decenas restantes 50 + 50 = 100. El total es 600."
-      },
-      {
-        "id": 7,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Si aproximamos el número 4.567 a la unidad de mil más cercana, ¿qué número obtenemos?",
-        "opciones": ["A) 4.000", "B) 4.500", "C) 5.000", "D) 4.600"],
-        "correcta": "C",
-        "explicacion": "Como las centenas son un 5, aproximamos hacia arriba: la unidad de mil más cercana es 5.000."
-      },
-      {
-        "id": 8,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Camilo tenía 900 hojas de colores y usó 542 en clases. ¿Cuántas hojas le quedaron disponibles?",
-        "correcta": "358",
-        "explicacion": "Efectuamos la resta aplicando doble canje en las decenas y centenas: 900 - 542 = 358."
-      },
-      {
-        "id": 9,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "En un juego virtual, Matías anotó 350 puntos en la primera ronda y 275 en la segunda. ¿Cuántos puntos tiene en total?",
-        "opciones": ["A) 625", "B) 525", "C) 615", "D) 635"],
-        "correcta": "A",
-        "explicacion": "Sumamos ambos puntajes de manera tradicional: 350 + 275 = 625."
-      },
-      {
-        "id": 10,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Calcula el número oculto que falta en la siguiente ecuación: 125 + x = 300. ¿Cuál es el valor de x?",
-        "correcta": "175",
-        "explicacion": "Restamos 300 - 125 para encontrar el sumando misterioso que completa la ecuación: 175."
-      },
-      {
-        "id": 11,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Si multiplicamos 24 x 3 de forma tradicional, ¿cuál es el producto?",
-        "opciones": ["A) 62", "B) 72", "C) 82", "D) 52"],
-        "correcta": "B",
-        "explicacion": "Multiplicamos 3 x 4 = 12 (reservamos 1 en la decena). Luego 3 x 2 = 6, más la reserva obtenemos 7 decenas. El resultado es 72."
-      },
-      {
-        "id": 12,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Calcula el producto rápido de multiplicar 150 x 4:",
-        "correcta": "600",
-        "explicacion": "Multiplicar 150 x 4 equivale a duplicar el número dos veces: 150 x 2 = 300, y 300 x 2 = 600."
-      },
-      {
-        "id": 13,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Resuelve la multiplicación con tres dígitos: 125 x 5 ¿Cuál es el resultado?",
-        "opciones": ["A) 525", "B) 625", "C) 600", "D) 725"],
-        "correcta": "B",
-        "explicacion": "Calculamos paso a paso: 5 x 5 = 25 (reservas 2). 5 x 2 = 10 (+2 = 12, reservas 1). 5 x 1 = 5 (+1 = 6). Resultado: 625."
-      },
-      {
-        "id": 14,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Un curso compró 6 cajas con 12 lápices cada una. ¿Cuántos lápices tienen en total?",
-        "correcta": "72",
-        "explicacion": "Multiplicamos la cantidad de cajas por la cantidad de lápices por caja: 12 x 6 = 72."
-      },
-      {
-        "id": 15,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Si repartimos 48 manzanas en partes iguales entre 4 niños, ¿cuántas manzanas recibe cada uno?",
-        "opciones": ["A) 12", "B) 10", "C) 14", "D) 11"],
-        "correcta": "A",
-        "explicacion": "Efectuamos la división exacta: 48 : 4. 4 cabe 1 vez en el 4, y cabe 2 veces en el 8. Obtenemos 12."
-      },
-      {
-        "id": 16,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Resuelve la siguiente división y escribe solo el resto que queda de la operación: 25 : 3",
-        "correcta": "1",
-        "explicacion": "El número 3 cabe 8 veces en 25 (3 x 8 = 24). Para llegar a 25 falta 1. Por lo tanto, el resto es 1."
-      },
-      {
-        "id": 17,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "Un pastel se divide en 4 partes iguales y Diego se come una porción. ¿Qué fracción representa lo que comió?",
-        "opciones": ["A) Un medio (1/2)", "B) Un cuarto (1/4)", "C) Tres cuartos (3/4)", "D) Un tercio (1/3)"],
-        "correcta": "B",
-        "explicacion": "Al tomar 1 parte de un total de 4 partes iguales, representamos la fracción como un cuarto (1/4)."
-      },
-      {
-        "id": 18,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Resuelve el ejercicio combinado: 100 - (25 + 35) ¿Cuál es el resultado?",
-        "correcta": "40",
-        "explicacion": "Primero resolvemos el paréntesis: 25 + 35 = 60. Luego restamos del total: 100 - 60 = 40."
-      },
-      {
-        "id": 19,
-        "tipo": "alternativa",
-        "materia": "matematica",
-        "pregunta": "¿Qué figura geométrica tiene exactamente 4 lados de igual medida y 4 ángulos rectos?",
-        "opciones": ["A) Rectángulo", "B) Triángulo", "C) Cuadrado", "D) Rombo"],
-        "correcta": "C",
-        "explicacion": "El cuadrado se define por tener cuatro lados idénticos y cuatro ángulos de 90 grados (rectos)."
-      },
-      {
-        "id": 20,
-        "tipo": "desarrollo",
-        "materia": "matematica",
-        "pregunta": "Encuentra el número que continúa el siguiente patrón de conteo: 15, 30, 45, [?]",
-        "correcta": "60",
-        "explicacion": "La secuencia avanza de 15 en 15. Al sumar 45 + 15 obtenemos 60."
-      },
+    // BASE DE DATOS COMPLETA E INTEGRADA (Matemática + Historia según Guías Reales)
+    const dbPreguntasCompletas = [
+      // === MATEMÁTICA ===
+      { "id": 101, "materia": "matematica", "tipo": "alternativa", "pregunta": "¿Cuál es el valor posicional del dígito 5 en el número 4.567?", "opciones": ["A) 5 unidades", "B) 5 decenas", "C) 5 centenas", "D) 5 unidades de mil"], "correcta": "C", "explicacion": "En el número 4.567, el 5 ocupa la celda de las centenas, sumando 500 unidades." },
+      { "id": 102, "materia": "matematica", "tipo": "desarrollo", "pregunta": "Escribe el número exacto que se forma con la siguiente descomposición aditiva posicional: 7UM + 3C + 8D + 2U[cite: 1]", "correcta": "7382", "explicacion": "Sumando 7.000 + 300 + 80 + 2 formamos exactamente el número 7.382[cite: 1]." },
+      { "id": 103, "materia": "matematica", "tipo": "alternativa", "pregunta": "Resuelve la adición vertical con canje: 458 + 274. ¿Cuál es el resultado total?[cite: 1]", "opciones": ["A) 632", "B) 732[cite: 1]", "C) 722", "D) 622"], "correcta": "B", "explicacion": "Al realizar la suma con reserva posicional da 732[cite: 1]." },
+      { "id": 104, "materia": "matematica", "tipo": "desarrollo", "pregunta": "Resuelve la resta con canje: 825 - 438 ¿Cuál es la diferencia numérica exacta?[cite: 1]", "correcta": "387", "explicacion": "Aplicando canjes en las decenas y centenas el resultado exacto es 387[cite: 1]." },
+      { "id": 105, "materia": "matematica", "tipo": "alternativa", "pregunta": "Si multiplicamos un número de dos dígitos por uno de un dígito empleando reagrupación: 24 x 3. ¿Cuál es el producto?[cite: 1]", "opciones": ["A) 62", "B) 52", "C) 72[cite: 1]", "D) 82"], "correcta": "C", "explicacion": "Multiplicando 3x4=12 (reserva 1) y 3x2=6 + 1 de reserva = 7 decenas. Resultado: 72[cite: 1]." },
+      { "id": 106, "materia": "matematica", "tipo": "desarrollo", "pregunta": "Repartir en partes iguales con resto: Si dividimos 75 bombones entre 6 niños, ¿cuántos bombones sobran (resto) en la operación?[cite: 1]", "correcta": "3", "explicacion": "6 por 12 es 72. Para llegar a 75 faltan 3 unidades. El resto o residuo es 3[cite: 1]." },
 
-      // ==========================================
-      // === HISTORIA / GEOGRAFÍA (IDs 21 al 40) ===
-      // ==========================================
-      {
-        "id": 21,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Qué línea imaginaria divide a la Tierra de forma horizontal en Hemisferio Norte y Hemisferio Sur?",
-        "opciones": ["A) El Meridiano de Greenwich", "B) El Círculo Polar", "C) El Trópico de Capricornio", "D) La Línea del Ecuador"],
-        "correcta": "D",
-        "explicacion": "La Línea del Ecuador es el paralelo 0° y divide la Tierra horizontalmente en dos hemisferios."
-      },
-      {
-        "id": 22,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Cómo se llama la distancia angular medida en grados entre cualquier punto de la Tierra y la Línea del Ecuador?",
-        "correcta": "latitud",
-        "explicacion": "La latitud indica qué tan al norte o al sur del Ecuador se encuentra un punto."
-      },
-      {
-        "id": 23,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Cuáles son las líneas imaginarias que pasan verticalmente de Polo a Polo en la Tierra?",
-        "opciones": ["A) Paralelos", "B) Meridianos", "C) Trópicos", "D) Longitudes"],
-        "correcta": "B",
-        "explicacion": "Los meridianos son los semicírculos verticales que conectan los dos polos geográficos de la Tierra."
-      },
-      {
-        "id": 24,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Cuál es el nombre del meridiano de referencia internacional conocido como Meridiano 0°?",
-        "correcta": "Greenwich",
-        "explicacion": "El Meridiano de Greenwich es el punto de partida (0°) para medir la longitud este u oeste."
-      },
-      {
-        "id": 25,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Cuál de los siguientes es un recurso natural renovable?",
-        "opciones": ["A) El carbón", "B) El petróleo", "C) Los árboles de un bosque", "D) El cobre de una mina"],
-        "correcta": "C",
-        "explicacion": "Los bosques pueden regenerarse mediante plantación y crecimiento natural, considerándose recursos renovables."
-      },
-      {
-        "id": 26,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Cómo se llama la distancia medida en grados entre un punto cualquiera de la Tierra y el Meridiano de Greenwich?",
-        "correcta": "longitud",
-        "explicacion": "La longitud nos indica la posición de un punto hacia el Este o el Oeste del meridiano base."
-      },
-      {
-        "id": 27,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Qué clima predomina en la zona central de Chile continental?",
-        "opciones": ["A) Clima polar", "B) Clima tropical húmedo", "C) Clima templado mediterráneo", "D) Clima desértico absoluto"],
-        "correcta": "C",
-        "explicacion": "La zona central de Chile posee un clima templado mediterráneo, con estaciones del año bien marcadas."
-      },
-      {
-        "id": 28,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "Identifica el principal recurso mineral metálico no renovable que exporta Chile al mundo entero:",
-        "correcta": "cobre",
-        "explicacion": "El cobre es un recurso mineral no renovable de alta relevancia económica para el estado chileno."
-      },
-      {
-        "id": 29,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Para qué sirve el conjunto de líneas imaginarias llamado red de coordenadas geográficas?",
-        "opciones": ["A) Para dividir los continentes", "B) Para localizar con exactitud cualquier lugar en el mapa", "C) Para medir las distancias terrestres en kilómetros", "D) Para conocer el clima de un país"],
-        "correcta": "B",
-        "explicacion": "La red de coordenadas permite ubicar cualquier punto de la superficie terrestre usando la intersección de latitud y longitud."
-      },
-      {
-        "id": 30,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Qué océano limita al oeste con las costas del continente americano y Chile continental?",
-        "correcta": "pacifico",
-        "explicacion": "El Océano Pacífico baña todas las costas del oeste de América de polo a polo."
-      },
-      {
-        "id": 31,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Qué tipo de paisaje natural se caracteriza por la escasez extrema de lluvias y vegetación con espinas?",
-        "opciones": ["A) Sabana", "B) Selva lluviosa", "C) Desierto", "D) Tundra polar"],
-        "correcta": "C",
-        "explicacion": "El desierto posee nulas precipitaciones, temperaturas extremas y escasa flora adaptada a la sequedad."
-      },
-      {
-        "id": 32,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "Nombra un recurso inagotable de la naturaleza que se use para producir energías limpias:",
-        "correcta": "sol",
-        "explicacion": "La energía solar es inagotable porque proviene del sol, no disminuyendo por el uso humano."
-      },
-      {
-        "id": 33,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Cuál de las siguientes líneas es un trópico ubicado en el Hemisferio Norte?",
-        "opciones": ["A) Trópico de Capricornio", "B) Trópico de Cáncer", "C) Círculo Polar Antártico", "D) Línea del Ecuador"],
-        "correcta": "B",
-        "explicacion": "El Trópico de Cáncer es el paralelo de referencia localizado a unos 23° al norte del Ecuador."
-      },
-      {
-        "id": 34,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿En qué continente geográfico habitamos nosotros y se ubican países como Chile, Perú o Argentina?",
-        "correcta": "america",
-        "explicacion": "Nuestro país pertenece al continente americano, específicamente a América del Sur."
-      },
-      {
-        "id": 35,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "Cuál es una medida adecuada para el uso sostenible del agua en el hogar?",
-        "opciones": ["A) Dejar la llave abierta mientras te cepillas los dientes", "B) Tomar duchas cortas de 5 minutos", "C) Lavar el auto con manguera abierta", "D) Regar el jardín a mediodía con sol fuerte"],
-        "correcta": "B",
-        "explicacion": "Ducharse rápidamente ahorra cientos de litros de agua dulce, promoviendo el cuidado del planeta."
-      },
-      {
-        "id": 36,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Cuál es la característica principal de temperatura del clima tropical cercano a la Línea del Ecuador?",
-        "correcta": "calido",
-        "explicacion": "Los climas tropicales mantienen temperaturas permanentemente elevadas o cálidas durante todo el año."
-      },
-      {
-        "id": 37,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Por qué el gobierno de Chile establece vedas (prohibición de pesca temporal) de ciertos mariscos?",
-        "opciones": ["A) Para subir el precio de los mariscos", "B) Para permitir que las especies se reproduzcan y no se extingan", "C) Para limpiar los mares", "D) Para que los pescadores descansen"],
-        "correcta": "B",
-        "explicacion": "La veda protege la biodiversidad marina permitiendo la reproducción exitosa de los recursos marinos."
-      },
-      {
-        "id": 38,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "¿Por cuál punto cardinal sale el Sol todas las mañanas desde la Cordillera de los Andes en Chile?",
-        "correcta": "este",
-        "explicacion": "El Sol sale por el Este (u Oriente) debido al sentido de rotación de la Tierra."
-      },
-      {
-        "id": 39,
-        "tipo": "alternativa",
-        "materia": "historia",
-        "pregunta": "¿Qué tipo de fauna es característica de los climas y paisajes polares extremos?",
-        "opciones": ["A) Monos y tucanes", "B) Pingüinos y osos polares", "C) Camellos y lagartijas", "D) Jirafas y elefantes"],
-        "correcta": "B",
-        "explicacion": "Los pingüinos y osos polares poseen adaptaciones biológicas avanzadas para resistir temperaturas bajo cero."
-      },
-      {
-        "id": 40,
-        "tipo": "desarrollo",
-        "materia": "historia",
-        "pregunta": "Escribe las siglas en inglés del sistema satelital que permite saber la posición exacta en los mapas de teléfonos móviles:",
-        "correcta": "gps",
-        "explicacion": "El GPS (Sistema de Posicionamiento Global) se basa en satélites para rastrear la ubicación espacial."
-      },
-
-      // ==========================================
-      // === CIENCIAS NATURALES (IDs 41 al 60) ===
-      // ==========================================
-      {
-        "id": 41,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Cuál es la capa sólida y más externa de la Tierra donde habitamos los seres vivos?",
-        "opciones": ["A) Manto", "B) Corteza", "C) Núcleo externo", "D) Núcleo interno"],
-        "correcta": "B",
-        "explicacion": "La corteza terrestre es la capa exterior rocosa donde se asientan continentes y océanos."
-      },
-      {
-        "id": 42,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Cómo se llaman las placas tectónicas gigantes en contacto que provocan sismos y terremotos en Chile?",
-        "correcta": "placas tectonicas",
-        "explicacion": "Las placas tectónicas son bloques rígidos de litosfera que flotan sobre el manto terrestre."
-      },
-      {
-        "id": 43,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "Chile continental es altamente sísmico debido al choque de dos grandes placas tectónicas. ¿Cuáles son?",
-        "opciones": ["A) Placa de Cocos y Placa de Nazca", "B) Placa de Nazca y Placa Sudamericana", "C) Placa del Pacífico y Placa Antártica", "D) Placa de Escocia y Placa del Caribe"],
-        "correcta": "B",
-        "explicacion": "La Placa de Nazca choca y se introduce bajo la Placa Sudamericana, liberando energía en forma de sismos."
-      },
-      {
-        "id": 44,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "La roca fundida y líquida en el interior de un volcán se llama magma, pero ¿cómo se llama cuando ya sale al exterior?",
-        "correcta": "lava",
-        "explicacion": "Al tomar contacto con el aire o agua superficial, los gases del magma escapan transformándolo en lava."
-      },
-      {
-        "id": 45,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "Si viajáramos hacia el centro de la Tierra, ¿cómo cambian la temperatura y la presión?",
-        "opciones": ["A) Ambas disminuyen rápidamente", "B) Ambas aumentan a medida que nos internamos", "C) La temperatura aumenta y la presión disminuye", "D) Se mantienen estables"],
-        "correcta": "B",
-        "explicacion": "El interior del planeta es extremadamente caliente y soporta presiones colosales hacia el núcleo."
-      },
-      {
-        "id": 46,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Qué instrumento tecnológico utilizan los científicos para registrar las ondas de los terremotos?",
-        "correcta": "sismografo",
-        "explicacion": "El sismógrafo mide y dibuja las vibraciones que viajan por el interior del suelo terrestre."
-      },
-      {
-        "id": 47,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Cómo se llama el proceso donde una placa tectónica marina más pesada se desliza debajo de otra continental?",
-        "opciones": ["A) Subducción", "B) Divergencia", "C) Transformación", "D) Erupción"],
-        "correcta": "A",
-        "explicacion": "La subducción ocurre cuando una placa se hunde bajo la otra, levantando cordilleras y provocando sismos."
-      },
-      {
-        "id": 48,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Qué fenómeno marino de olas gigantes se genera tras un fuerte terremoto con epicentro en el océano?",
-        "correcta": "tsunami",
-        "explicacion": "El tsunami o maremoto desplaza grandes masas de agua que azotan las costas cercanas."
-      },
-      {
-        "id": 49,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Qué escala de medición científica calcula la energía liberada (magnitud) en un terremoto?",
-        "opciones": ["A) Escala de Mercalli", "B) Escala de Richter", "C) Escala Celsius", "D) Escala de Beaufort"],
-        "correcta": "B",
-        "explicacion": "La escala de Richter mide de forma matemática y objetiva la magnitud exacta de un sismo."
-      },
-      {
-        "id": 50,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Cómo se llama el punto de la superficie terrestre directamente arriba del foco subterráneo del sismo?",
-        "correcta": "epicentro",
-        "explicacion": "El epicentro es la zona donde las vibraciones sísmicas se perciben primero y con mayor fuerza."
-      },
-      {
-        "id": 51,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Qué sucede cuando dos placas tectónicas se separan una de otra (límite divergente)?",
-        "opciones": ["A) Se destruyen cordilleras enteras", "B) Emerge magma y se crea nueva corteza terrestre", "C) No ocurre ningún cambio", "D) Se genera un tsunami de forma instantánea"],
-        "correcta": "B",
-        "explicacion": "Al separarse, el magma del manto sube, se enfría en el agua y forma nuevo relieve submarino."
-      },
-      {
-        "id": 52,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Qué material fundido y muy caliente se encuentra dentro de la cámara magmática de un volcán antes de hacer erupción?",
-        "correcta": "magma",
-        "explicacion": "El magma es la roca derretida por el calor interno de la Tierra mezclada con gases."
-      },
-      {
-        "id": 53,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Cuál es la abertura superior o boca de un volcán por donde salen el humo, las cenizas y la lava?",
-        "opciones": ["A) Chimenea", "B) Cráter", "C) Cámara magmática", "D) Cono volcánico"],
-        "correcta": "B",
-        "explicacion": "El cráter es la abertura con forma de embudo en la cima del volcán."
-      },
-      {
-        "id": 54,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Cuál es la capa central de la Tierra, compuesta principalmente de metales como hierro y níquel?",
-        "correcta": "nucleo",
-        "explicacion": "El núcleo es el centro del planeta, con partes sólida y líquida a miles de grados."
-      },
-      {
-        "id": 55,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Qué acción preventiva se debe realizar durante un fuerte sismo dentro de la sala de clases?",
-        "opciones": ["A) Correr asustado hacia la salida de inmediato", "B) Ubicarse en una zona de seguridad interna libre de objetos colgantes", "C) Gritar para pedir auxilio", "D) Subirse a las mesas para mirar por la ventana"],
-        "correcta": "B",
-        "explicacion": "Mantener la calma y alejarse de vidrios y estanterías previene accidentes graves de caída de objetos."
-      },
-      {
-        "id": 56,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Cómo se llama el punto subterráneo real e interior de la Tierra donde se inicia la rotura que causa el sismo?",
-        "correcta": "hipocentro",
-        "explicacion": "El hipocentro (o foco) es el lugar exacto en profundidad donde se origina la liberación inicial de energía."
-      },
-      {
-        "id": 57,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "¿Qué tipo de límite entre placas se caracteriza por el deslizamiento paralelo de dos bloques sin crearse ni destruirse corteza?",
-        "opciones": ["A) Límite divergente", "B) Límite convergente", "C) Límite transformante", "D) Límite de erupción"],
-        "correcta": "C",
-        "explicacion": "Los límites transformantes (como la Falla de San Andrés) causan gran fricción y sismos frecuentes."
-      },
-      {
-        "id": 58,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Cuál es la capa intermedia de la Tierra que se ubica justo debajo de la corteza y sobre el núcleo?",
-        "correcta": "manto",
-        "explicacion": "El manto representa la mayor porción del planeta y contiene materiales rocosos semisólidos."
-      },
-      {
-        "id": 59,
-        "tipo": "alternativa",
-        "materia": "ciencias",
-        "pregunta": "Por qué la costa de Chile pertenece al llamado 'Cinturón de Fuego del Pacífico'?",
-        "opciones": ["A) Porque hace mucho calor en verano", "B) Porque posee una altísima concentración de volcanes activos y zonas de sismos", "C) Por los incendios forestales", "D) Por las corrientes marinas cálidas"],
-        "correcta": "B",
-        "explicacion": "El Cinturón de Fuego rodea el Océano Pacífico concentrando la mayor actividad volcánica y sísmica del planeta."
-      },
-      {
-        "id": 60,
-        "tipo": "desarrollo",
-        "materia": "ciencias",
-        "pregunta": "¿Qué fuerza invisible atrae a los objetos hacia el centro de la Tierra impidiendo que floten al espacio?",
-        "correcta": "gravedad",
-        "explicacion": "La gravedad es la fuerza de atracción que ejerce la gran masa de la Tierra sobre nosotros."
-      },
-
-      // ==========================================
-      // === LENGUAJE / COMUNICACIÓN (IDs 61 al 80) ===
-      // ==========================================
-      {
-        "id": 61,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Cuál de las siguientes palabras es un conector temporal que sirve para indicar el final de una historia?",
-        "opciones": ["A) De repente", "B) Había una vez", "C) Finalmente", "D) Porque"],
-        "correcta": "C",
-        "explicacion": "'Finalmente' introduce el cierre o desenlace en un relato narrativo."
-      },
-      {
-        "id": 62,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Identifica el sinónimo de la palabra 'asustado' que tiene 8 letras y comienza con la letra 't':",
-        "correcta": "temeroso",
-        "explicacion": "La palabra 'temeroso' es un sinónimo directo y preciso de estar asustado o lleno de temor."
-      },
-      {
-        "id": 63,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿En qué parte de la estructura del cuento se presentan los personajes y el lugar donde ocurre la aventura?",
-        "opciones": ["A) Desarrollo", "B) Inicio", "C) Desenlace", "D) Título"],
-        "correcta": "B",
-        "explicacion": "El inicio introduce al lector en la situación inicial del relato, describiendo personajes y ambientes."
-      },
-      {
-        "id": 64,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "¿Quién es el personaje principal (protagonista) que debe llevar una cesta con comida a su abuela en el bosque?",
-        "correcta": "caperucita roja",
-        "explicacion": "Caperucita Roja es el personaje central del tradicional cuento infantil de los Hermanos Grimm."
-      },
-      {
-        "id": 65,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Qué tipo de texto breve tiene como propósito dejar una enseñanza llamada 'moraleja' y suele estar protagonizado por animales?",
-        "opciones": ["A) Noticia", "B) Poema", "C) Fábula", "D) Receta"],
-        "correcta": "C",
-        "explicacion": "La fábula utiliza personajes animales personificados para transmitir una moraleja final de carácter ético."
-      },
-      {
-        "id": 66,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Escribe un sustantivo propio que represente el nombre de nuestro hermoso país de Chile de manera correcta:",
-        "correcta": "Chile",
-        "explicacion": "Los nombres propios de naciones o ciudades deben escribirse siempre con mayúscula inicial (Chile)."
-      },
-      {
-        "id": 67,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Qué conector causal explica el motivo de un hecho? (Ej: 'Faltó a clases ______ estaba enfermo')",
-        "opciones": ["A) Pero", "B) Porque", "C) Después", "D) También"],
-        "correcta": "B",
-        "explicacion": "'Porque' une el hecho con la causa que lo motivó directamente."
-      },
-      {
-        "id": 68,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Escribe el antónimo (opuesto directo) de la palabra 'alegre' que comience con la letra 't':",
-        "correcta": "triste",
-        "explicacion": "El término opuesto a la alegría o estar alegre es la tristeza o estar triste."
-      },
-      {
-        "id": 69,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Cuál es la función principal de los adjetivos calificativos en una oración?",
-        "opciones": ["A) Indicar una acción o movimiento", "B) Nombrar a personas u objetos", "C) Describir las características o cualidades de un sustantivo", "D) Conectar dos oraciones separadas"],
-        "correcta": "C",
-        "explicacion": "Los adjetivos nos dicen cómo son las personas, animales, objetos o lugares descritos."
-      },
-      {
-        "id": 70,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "¿A qué tipo de texto pertenece una receta de cocina que contiene ingredientes y pasos ordenados?",
-        "correcta": "instructivo",
-        "explicacion": "Los textos instructivos guían al lector de forma secuencial para realizar una actividad con éxito."
-      },
-      {
-        "id": 71,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Qué elemento esencial de un texto nos indica de qué trata de manera resumida en pocas palabras?",
-        "opciones": ["A) El glosario", "B) El título", "C) La moraleja", "D) El párrafo final"],
-        "correcta": "B",
-        "explicacion": "El título anticipa el tema central de la lectura al lector."
-      },
-      {
-        "id": 72,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Identifica el sujeto en la oración: 'El perro de Matías corre feliz'. Escribe quién realiza la acción:",
-        "correcta": "El perro de Matias",
-        "explicacion": "El sujeto de la oración es 'El perro de Matías', quien ejecuta la acción de correr."
-      },
-      {
-        "id": 73,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Cuál de los siguientes es un conector de adición para agregar ideas en un escrito?",
-        "opciones": ["A) Sin embargo", "B) Además", "C) Por lo tanto", "D) O sea"],
-        "correcta": "B",
-        "explicacion": "'Además' suma información a lo expresado con anterioridad."
-      },
-      {
-        "id": 74,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Identifica el verbo en la oración: 'Sofía lee un cuento divertido'. Escribe solo la palabra que representa la acción:",
-        "correcta": "lee",
-        "explicacion": "La acción principal de la oración que ejecuta Sofía es 'lee' (del verbo leer)."
-      },
-      {
-        "id": 75,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Para qué se utilizan los signos de interrogación (¿ ?) en un escrito?",
-        "opciones": ["A) Para expresar sorpresa o emoción", "B) Para formular una pregunta de forma directa", "C) Para finalizar un párrafo largo", "D) Para citar palabras exactas"],
-        "correcta": "B",
-        "explicacion": "Los signos de interrogación delimitan una estructura de pregunta oral o escrita."
-      },
-      {
-        "id": 76,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Escribe la palabra 'arbol' agregándole la tilde (acento gráfico) que le corresponde por ser palabra grave:",
-        "correcta": "árbol",
-        "explicacion": "'Árbol' es una palabra grave terminada en consonante distinta de N o S, por lo que lleva tilde en la 'a'."
-      },
-      {
-        "id": 77,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "¿Qué tipo de texto narrativo cuenta hechos reales mezclados con fantasía para explicar el origen de un pueblo o relieve?",
-        "opciones": ["A) Noticia periodística", "B) Leyenda", "C) Receta de cocina", "D) Carta formal"],
-        "correcta": "B",
-        "explicacion": "La leyenda combina raíces históricas con elementos mágicos y tradicionales de la identidad local."
-      },
-      {
-        "id": 78,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Escribe en plural la palabra 'luz' aplicando la regla de ortografía correcta de la letra 'z':",
-        "correcta": "luces",
-        "explicacion": "Las palabras terminadas en 'z' forman su plural reemplazando la 'z' por la terminación 'ces'."
-      },
-      {
-        "id": 79,
-        "tipo": "alternativa",
-        "materia": "lenguaje",
-        "pregunta": "Cuál es la diferencia principal entre un cuento literario y una noticia de diario?",
-        "opciones": ["A) El cuento es real y la noticia es inventada", "B) El cuento busca entretener con ficción, mientras la noticia informa un hecho real", "C) El cuento es solo para adultos y la noticia es para niños", "D) La noticia rima igual que un cuento"],
-        "correcta": "B",
-        "explicacion": "El cuento pertenece al género literario (ficción para entretener); la noticia al género periodístico (información verídica)."
-      },
-      {
-        "id": 80,
-        "tipo": "desarrollo",
-        "materia": "lenguaje",
-        "pregunta": "Escribe la palabra que se forma al agregar el prefijo de repetición 're' al verbo 'hacer':",
-        "correcta": "rehacer",
-        "explicacion": "El prefijo 're' significa volver a realizar una acción, por lo tanto, re + hacer forma 'rehacer'."
-      },
-
-      // ==========================================
-      // === INGLÉS / TOWN PREPOSITIONS (IDs 81 al 100) ===
-      // ==========================================
-      {
-        "id": 81,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Complete the phrase: 'The cinema is ________ the hotel' (Al frente de / cruzando la calle)",
-        "opciones": ["A) below", "B) opposite", "C) next to", "D) above"],
-        "correcta": "B",
-        "explicacion": "'Opposite' indicates something is facing another thing across an open space, equivalent to 'al frente de'."
-      },
-      {
-        "id": 82,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the town place word 'SQUARE' into Spanish. (Escribe solo una palabra):",
-        "correcta": "plaza",
-        "explicacion": "A square is an open public space in the middle of a town, commonly called 'plaza'."
-      },
-      {
-        "id": 83,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Where do you go to take a train or the underground metro?",
-        "opciones": ["A) Restaurant", "B) Underground station", "C) Hospital", "D) Library"],
-        "correcta": "B",
-        "explicacion": "The 'underground station' is where passengers board subterranean metro lines."
-      },
-      {
-        "id": 84,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the word 'traffic light' into Spanish:",
-        "correcta": "semaforo",
-        "explicacion": "The traffic light is the electronic sign with red, yellow, and green lights to control traffic."
-      },
-      {
-        "id": 85,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Which road feature has black and white stripes for pedestrians to walk across safely?",
-        "opciones": ["A) Zebra crossing", "B) Traffic light", "C) Square", "D) Station"],
-        "correcta": "A",
-        "explicacion": "A 'zebra crossing' is the pedestrian crosswalk on streets marked with white painted stripes."
-      },
-      {
-        "id": 86,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the place where you pay to sleep while traveling: 'HOTEL' into Spanish:",
-        "correcta": "hotel",
-        "explicacion": "The word 'hotel' is spelled exactly the same in both English and Spanish."
-      },
-      {
-        "id": 87,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Where can we go around town to look at ancient history or art expositions?",
-        "opciones": ["A) Restaurant", "B) Museum", "C) Shopping centre", "D) Bus station"],
-        "correcta": "B",
-        "explicacion": "A 'museum' contains historical, cultural, or artistic objects of public value."
-      },
-      {
-        "id": 88,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the town place 'BANK' into Spanish:",
-        "correcta": "banco",
-        "explicacion": "A bank is a financial establishment, translated to Spanish as 'banco'."
-      },
-      {
-        "id": 89,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Complete with the correct preposition: 'The sun is ________ the trees in the sky'",
-        "opciones": ["A) below", "B) opposite", "C) above", "D) next to"],
-        "correcta": "C",
-        "explicacion": "'Above' means higher in position or overhead in relation to another object."
-      },
-      {
-        "id": 90,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the town place 'RESTAURANT' into Spanish:",
-        "correcta": "restaurante",
-        "explicacion": "A restaurant is a place where we sit down and buy prepared meals."
-      },
-      {
-        "id": 91,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "What is the opposite of the word 'above'?",
-        "opciones": ["A) opposite", "B) next to", "C) below", "D) far from"],
-        "correcta": "C",
-        "explicacion": "The opposite antonym of above (arriba) is below (abajo)."
-      },
-      {
-        "id": 92,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "What does the preposition 'NEAR' mean in Spanish? (Ej: 'The school is near my house'):",
-        "correcta": "cerca",
-        "explicacion": "'Near' is used to define short distances between objects."
-      },
-      {
-        "id": 93,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Where do you go in town to buy clothes, shoes and toys in many different stores?",
-        "opciones": ["A) Bank", "B) Shopping centre", "C) Bus station", "D) Library"],
-        "correcta": "B",
-        "explicacion": "A 'shopping centre' or mall contains multiple shops and commercial establishments."
-      },
-      {
-        "id": 94,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the direction command 'TURN LEFT' to Spanish:",
-        "correcta": "doblar a la izquierda",
-        "explicacion": "'Turn left' instructs someone to change orientation towards the left-hand side."
-      },
-      {
-        "id": 95,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "What is the English command to change direction to the right?",
-        "opciones": ["A) Go straight ahead", "B) Turn right", "C) Turn left", "D) Stop"],
-        "correcta": "B",
-        "explicacion": "'Turn right' means rotating your travel vector towards the right side."
-      },
-      {
-        "id": 96,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the command 'GO STRAIGHT AHEAD' to Spanish. (Ej: 'at the crosswalk'):",
-        "correcta": "seguir derecho",
-        "explicacion": "'Go straight ahead' means walking forward without turning."
-      },
-      {
-        "id": 97,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "If a city is extremely distant from your home, we say it is...",
-        "opciones": ["A) near", "B) next to", "C) far from", "D) above"],
-        "correcta": "C",
-        "explicacion": "'Far from' means located at a great distance from a reference point."
-      },
-      {
-        "id": 98,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the word 'TOWN' to Spanish:",
-        "correcta": "pueblo",
-        "explicacion": "A town is a small urban center, commonly translated to Spanish as 'pueblo' or 'ciudad pequeña'."
-      },
-      {
-        "id": 99,
-        "tipo": "alternativa",
-        "materia": "ingles",
-        "pregunta": "Where does the public bus stop to receive passengers in the city?",
-        "opciones": ["A) Underground station", "B) Bus station", "C) Hotel", "D) Bank"],
-        "correcta": "B",
-        "explicacion": "Buses arrive and depart from designated 'bus stations' and bus stops."
-      },
-      {
-        "id": 100,
-        "tipo": "desarrollo",
-        "materia": "ingles",
-        "pregunta": "Translate the word 'hospital' to Spanish:",
-        "correcta": "hospital",
-        "explicacion": "The word 'hospital' maintains identical writing and similar general phonetics in both languages."
-      }
+      // === HISTORIA, GEOGRAFÍA Y CIENCIAS SOCIALES ===
+      { "id": 201, "materia": "historia", "tipo": "alternativa", "pregunta": "La red de coordenadas geográficas está compuesta por líneas imaginarias llamadas paralelos y meridianos[cite: 1]. ¿Para qué nos sirve principalmente este conjunto de líneas?[cite: 1]", "vectorType": "globoCompleto", "opciones": ["A) Saber la cantidad de agua del planeta.", "B) Encontrar un punto con exactitud dentro de la Tierra[cite: 1].", "C) Estudiar la reproducción de las plantas.", "D) Conocer los nombres de todos los alcaldes de Chile."], "correcta": "B", "explicacion": "El cruce de un paralelo y un meridiano nos otorga una ubicación exacta en cualquier punto de nuestro planeta[cite: 1]." },
+      { "id": 202, "materia": "historia", "tipo": "alternativa", "pregunta": "¿Cómo se llama la línea imaginaria señalada horizontalmente a los 0° que divide al planeta en Hemisferio Norte y Hemisferio Sur?[cite: 1]", "vectorType": "ecuador", "opciones": ["A) Línea del Ecuador[cite: 1]", "B) Trópico de Cáncer", "C) Trópico de Capricornio", "D) Meridiano de Greenwich"], "correcta": "A", "explicacion": "La Línea del Ecuador es el paralelo base (0°) y divide a la Tierra en dos hemisferios idénticos[cite: 1]." },
+      { "id": 203, "materia": "historia", "tipo": "alternativa", "pregunta": "¿Cuál es el principal meridiano (línea imaginaria vertical 0°) que divide a la Tierra en Hemisferio Occidental y Hemisferio Oriental?[cite: 1]", "vectorType": "greenwich", "opciones": ["A) Línea del Ecuador", "B) Trópico de Cáncer", "C) Meridiano de Greenwich[cite: 1]", "D) Círculo Polar Ártico"], "correcta": "C", "explicacion": "El Meridiano de Greenwich es la línea vertical de referencia 0° que separa el este del oeste[cite: 1]." },
+      { "id": 204, "materia": "historia", "tipo": "alternativa", "pregunta": "¿Qué es la Latitud en geografía?[cite: 1]", "vectorType": "latitud", "opciones": ["A) La distancia de un meridiano respecto al paralelo 0°.", "B) La distancia de un paralelo respecto de la línea del Ecuador[cite: 1].", "C) El cruce exacto de todos los océanos del mundo.", "D) La distancia medida entre el Polo Norte y el Polo Sur."], "correcta": "B", "explicacion": "La latitud mide la distancia en grados (de 0° a 90°) de cualquier punto de la Tierra con respecto a la línea del Ecuador[cite: 1]." },
+      { "id": 205, "materia": "historia", "tipo": "alternativa", "pregunta": "El 'Trópico de Capricornio' se ubica en el hemisferio:[cite: 1]", "vectorType": "capricornio", "opciones": ["A) Norte", "B) Oriental", "C) Sur[cite: 1]", "D) Occidental"], "correcta": "C", "explicacion": "El Trópico de Capricornio es un paralelo ubicado en el Hemisferio Sur, mientras que el de Cáncer está en el Hemisferio Norte[cite: 1]." },
+      { "id": 206, "materia": "historia", "tipo": "alternativa", "pregunta": "Con respecto a la Línea del Ecuador, ¿en qué hemisferio se encuentra nuestro país, Chile?[cite: 1]", "vectorType": "chileHemisferio", "opciones": ["A) Norte", "B) Sur[cite: 1]", "C) Este", "D) Oriente"], "correcta": "B", "explicacion": "Chile se localiza al sur de la Línea del Ecuador, por lo tanto, pertenece al Hemisferio Sur[cite: 1]." },
+      { "id": 207, "materia": "historia", "tipo": "alternativa", "pregunta": "La zona climática que se ubica alrededor de la línea del Ecuador, donde los rayos del sol llegan directos y presenta altas temperaturas todo el año es la:[cite: 1]", "vectorType": "zonas", "opciones": ["A) Zona Fría", "B) Zona Templada", "C) Zona Cálida o Tropical[cite: 1]", "D) Zona de Alta Montaña"], "correcta": "C", "explicacion": "La zona cálida o tropical está entre los trópicos y recibe el calor del sol con máxima intensidad todo el año[cite: 1]." },
+      { "id": 208, "materia": "historia", "tipo": "alternativa", "pregunta": "¿Cuál de los siguientes recursos corresponde a un recurso natural NO renovable de gran importancia minera en Chile?[cite: 1]", "opciones": ["A) El aire[cite: 1]", "B) El Cobre[cite: 1]", "C) La luz solar[cite: 1]", "D) El agua de los ríos"], "correcta": "B", "explicacion": "Los minerales como el cobre son recursos No renovables porque demoran millones de años en formarse y sus reservas se agotan[cite: 1]." },
+      { "id": 209, "materia": "historia", "tipo": "alternativa", "pregunta": "¿Cuál de las siguientes autoridades es nombrada directamente por la confianza del Presidente de la República y NO elegida por votación ciudadana?[cite: 1]", "opciones": ["A) Senadores y Senadoras[cite: 1]", "B) Alcaldes y Alcaldesas[cite: 1]", "C) Ministros y Ministras de Estado[cite: 1]", "D) Diputados y Diputadas[cite: 1]"], "correcta": "C", "explicacion": "Los ministros son colaboradores directos designados por el Presidente[cite: 1]. Los alcaldes, diputados y senadores son elegidos por votación de los ciudadanos[cite: 1]." },
+      { "id": 210, "materia": "historia", "tipo": "desarrollo", "pregunta": "Escribe un ejemplo de un recurso natural de tipo INAGOTABLE que estudiamos en la guía (escribe solo la palabra en mayúsculas):[cite: 1]", "correcta": "AIRE", "explicacion": "El aire y la luz solar son recursos inagotables porque no se terminan debido a la actividad humana[cite: 1]." }
     ];
 
-    let currentQuestions = [];
-    let currentIndex = 0;
-    let score = 0;
-    let activeGameMode = 'practica'; // 'practica' o 'evaluacion'
+    let dbPreguntas = [];
+    let currentQuestionIndex = 0;
+    let gameMode = "practica";
+    let activeSubject = "todos";
+    let studentData = {};
+    let userAnswers = {}; 
 
-    // Datos del Alumno
-    let studentInfo = {
-      nombre: "",
-      apellido: "",
-      curso: "4° Básico A",
-      fecha: ""
+    // Inicializar al cargar la página
+    window.onload = function() {
+      filterSubject('todos');
     };
 
-    // Estructura para registrar respuestas del usuario
-    let userAnswers = {}; // { [questionId]: { userResponse: string, isCorrect: bool } }
-
-    window.onload = function() {
-      // Setea fecha de hoy por defecto en el form de registro
-      const today = new Date().toISOString().split('T')[0];
-      document.getElementById('student-date').value = today;
-    }
-
-    // MANEJAR REGISTRO
     function handleRegistration(e) {
       e.preventDefault();
+      studentData.name = document.getElementById("student-name").value;
+      studentData.grade = document.getElementById("student-grade").value;
+      studentData.date = document.getElementById("student-date").value;
       
-      studentInfo.nombre = document.getElementById('student-name').value.trim();
-      studentInfo.apellido = document.getElementById('student-lastname').value.trim();
-      studentInfo.curso = document.getElementById('student-grade').value;
-      studentInfo.fecha = document.getElementById('student-date').value;
-
-      // Ocultar pantalla de registro
-      document.getElementById('registration-screen').classList.add('hidden');
-      
-      // Actualizar HUD
-      document.getElementById('student-hud-lbl').innerText = `Estudiante: ${studentInfo.nombre} ${studentInfo.apellido} | ${studentInfo.curso} | Fecha: ${studentInfo.fecha}`;
-
-      // Inicializar preguntas aleatorias
-      filterSubject('todos');
-      showToast("¡Perfil guardado! Comienza a repasar.");
+      document.getElementById("student-hud-lbl").innerText = `Estudiante: ${studentData.name} | Curso: ${studentData.grade} | Modo: ${gameMode.toUpperCase()}`;
+      document.getElementById("registration-screen").classList.add("hidden");
     }
 
-    // NAVEGACIÓN DE PESTAÑAS
-    function switchTab(tabId) {
-      document.getElementById('tab-simulator').classList.add('hidden');
-      document.getElementById('tab-raw-json').classList.add('hidden');
-      
-      document.getElementById('btn-tab-sim').className = "px-4 py-2 rounded-full font-bold text-sm transition-all text-slate-600 hover:bg-slate-200";
-      document.getElementById('btn-tab-json').className = "px-4 py-2 rounded-full font-bold text-sm transition-all text-slate-600 hover:bg-slate-200";
-
-      if (tabId === 'simulator') {
-        document.getElementById('tab-simulator').classList.remove('hidden');
-        document.getElementById('btn-tab-sim').className = "px-4 py-2 rounded-full font-bold text-sm transition-all bg-indigo-600 text-white shadow-md shadow-indigo-100";
-      } else {
-        document.getElementById('tab-raw-json').classList.remove('hidden');
-        document.getElementById('btn-tab-json').className = "px-4 py-2 rounded-full font-bold text-sm transition-all bg-slate-800 text-white shadow-md shadow-slate-900";
-        updateJSONBlock();
-      }
-    }
-
-    // CONFIGURACIÓN DE MODO DE JUEGO
     function setGameMode(mode) {
-      activeGameMode = mode;
-      const btnPrac = document.getElementById('btn-mode-practica');
-      const btnEval = document.getElementById('btn-mode-evaluacion');
-
-      if (mode === 'practica') {
-        btnPrac.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-800 shadow-sm";
-        btnEval.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-700";
-        document.getElementById('btn-reveal').classList.remove('hidden');
-        showToast("Modo Práctica activado: Verás las explicaciones de inmediato.");
-      } else {
-        btnPrac.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-700";
-        btnEval.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-800 shadow-sm";
-        document.getElementById('btn-reveal').classList.add('hidden'); // Exclusivo de práctica
-        showToast("Modo Examen activado: Se evaluará todo al presionar 'Terminar'.");
+      gameMode = mode;
+      document.getElementById("btn-mode-practica").className = mode === "practica" ? "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-800 shadow-sm" : "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-700";
+      document.getElementById("btn-mode-evaluacion").className = mode === "evaluacion" ? "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-white text-slate-800 shadow-sm" : "px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-500 hover:text-slate-700";
+      if(studentData.name) {
+        document.getElementById("student-hud-lbl").innerText = `Estudiante: ${studentData.name} | Curso: ${studentData.grade} | Modo: ${gameMode.toUpperCase()}`;
       }
-
-      // Re-ordenamos y limpiamos
-      regenerateRandomEvaluation();
+      resetStateKeepingFilters();
     }
 
-    // UTILERÍA: Algoritmo de mezcla aleatoria (Fisher-Yates)
-    function shuffle(array) {
-      let currentIndex = array.length, randomIndex;
-      while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-      }
-      return array;
-    }
-
-    // FILTROS DE MATERIA CON MUESTREO ALEATORIO (Exclusivo 10 preguntas)
-    let selectedMateriaFilter = 'todos';
     function filterSubject(subject) {
-      selectedMateriaFilter = subject;
+      activeSubject = subject;
       
-      // Cambiar clase activa en botones de la vista
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => {
-        btn.className = "filter-btn px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-slate-200 hover:border-slate-300 text-slate-600 bg-white";
+      // Estilo de botones
+      ["todos", "matematica", "historia"].forEach(s => {
+        const btn = document.getElementById(`btn-sub-${s}`);
+        if(s === subject) {
+          btn.className = "filter-btn px-4 py-3 rounded-2xl font-bold border-2 transition-all flex items-center justify-center gap-2 border-indigo-500 bg-indigo-50 text-indigo-700";
+        } else {
+          btn.className = "filter-btn px-4 py-3 rounded-2xl font-bold border-2 transition-all flex items-center justify-center gap-2 border-slate-200 bg-white text-slate-600 hover:border-indigo-400";
+        }
       });
 
-      // El evento puede ser gatillado por acción del usuario o automáticamente
-      if (window.event && window.event.currentTarget) {
-        window.event.currentTarget.className = "filter-btn active px-3 py-2.5 rounded-2xl text-xs sm:text-sm font-bold border-2 transition-all flex flex-col items-center gap-1 border-indigo-500 bg-indigo-50 text-indigo-700";
+      if (subject === "todos") {
+        dbPreguntas = [...dbPreguntasCompletas];
+      } else {
+        dbPreguntas = dbPreguntasCompletas.filter(q => q.materia === subject);
       }
 
-      regenerateRandomEvaluation();
+      // Mezclar preguntas de forma aleatoria para que siempre sea un desafío diferente
+      dbPreguntas.sort(() => Math.random() - 0.5);
+
+      resetStateKeepingFilters();
     }
 
-    // Regenerar prueba con 10 preguntas aleatorias por materia
-    function regenerateRandomEvaluation() {
-      resetAnswers();
-      currentIndex = 0;
+    function resetStateKeepingFilters() {
+      currentQuestionIndex = 0;
+      userAnswers = {};
+      document.getElementById("score-lbl").innerText = "0";
+      document.getElementById("report-card-container").classList.add("hidden");
+      document.getElementById("trivia-active-container").classList.remove("hidden");
+      
+      document.getElementById("total-count-lbl").innerText = dbPreguntas.length;
+      document.getElementById("filtered-count").innerText = dbPreguntas.length;
 
-      if (selectedMateriaFilter === 'todos') {
-        // Obtenemos exactamente 10 aleatorias por materia (5 materias x 10 = 50 preguntas en total)
-        const materias = ['matematica', 'historia', 'ciencias', 'lenguaje', 'ingles'];
-        let subsetPool = [];
-        
-        materias.forEach(mat => {
-          const poolDeMateria = dbPreguntas.filter(q => q.materia === mat);
-          const aleatoriasDeMateria = shuffle([...poolDeMateria]).slice(0, 10);
-          subsetPool = subsetPool.concat(aleatoriasDeMateria);
-        });
-
-        // Mezclar las 50 preguntas finales para que se intercalen de forma de juego
-        currentQuestions = shuffle(subsetPool);
-      } else {
-        // Extraemos 10 preguntas aleatorias de la materia elegida
-        const poolDeMateria = dbPreguntas.filter(q => q.materia === selectedMateriaFilter);
-        currentQuestions = shuffle([...poolDeMateria]).slice(0, 10);
-      }
-
-      // Restablecer contenedores de vistas
-      document.getElementById('trivia-active-container').classList.remove('hidden');
-      document.getElementById('report-card-container').classList.add('hidden');
-
-      renderActiveQuestion();
-      renderQuickIndexList();
+      renderQuickIndex();
+      showCurrentQuestion();
     }
 
-    // MOSTRAR PREGUNTA ACTIVA Y ACTUALIZAR ACCIONES
-    function renderActiveQuestion() {
-      const total = currentQuestions.length;
-      document.getElementById('total-count-lbl').innerText = total;
-      document.getElementById('filtered-count').innerText = `${total} disp.`;
-
-      if (total === 0) {
-        document.getElementById('question-text').innerText = "No hay preguntas disponibles.";
-        document.getElementById('options-container').classList.add('hidden');
-        document.getElementById('desarrollo-container').classList.add('hidden');
-        document.getElementById('index-lbl').innerText = "0 de 0";
-        document.getElementById('subject-badge').innerText = "-";
-        return;
-      }
-
-      const q = currentQuestions[currentIndex];
-      
-      document.getElementById('index-lbl').innerText = `Pregunta ${currentIndex + 1} de ${total}`;
-      document.getElementById('question-text').innerText = q.pregunta;
-      
-      const badge = document.getElementById('subject-badge');
-      badge.innerText = q.materia.toUpperCase();
-      badge.className = `px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${getMateriaColor(q.materia)}`;
-
-      hideFeedback();
-      
-      // CONFIGURACIÓN DINÁMICA DEL INPUT Y SU PLACEHOLDER DE AYUDA SEGÚN LA MATERIA
-      const inputEl = document.getElementById('desarrollo-input');
-      inputEl.value = "";
-      
-      if (q.materia === 'matematica') {
-        inputEl.placeholder = "Ej: 72 (escribe solo el número)";
-      } else if (q.materia === 'ingles') {
-        inputEl.placeholder = "Ej: square (escribe la palabra en inglés)";
-      } else {
-        inputEl.placeholder = "Ej: escribe tu respuesta en palabras...";
-      }
-
-      // Verificamos si ya fue respondida
-      const pastAns = userAnswers[q.id];
-
-      if (q.tipo === 'alternativa') {
-        document.getElementById('options-container').classList.remove('hidden');
-        document.getElementById('desarrollo-container').classList.add('hidden');
-        renderOptions(q, pastAns);
-      } else {
-        document.getElementById('options-container').classList.add('hidden');
-        document.getElementById('desarrollo-container').classList.remove('hidden');
-        if (pastAns) {
-          inputEl.value = pastAns.userResponse;
-        }
-      }
-
-      // Controlar el Botón de Navegación Derecho / Finalización
-      const navRightContainer = document.getElementById('nav-right-container');
-      if (currentIndex === total - 1) {
-        // En la última pregunta, mostramos el Gran Botón Llamativo de Terminar Prueba
-        navRightContainer.innerHTML = `
-          <button onclick="showResultsTab()" class="pulse-ring animate-gradient-fast w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 text-white font-extrabold text-sm uppercase rounded-xl shadow-lg transition-all scale-105">
-            🏁 Guardar y Terminar Examen
-          </button>
-        `;
-      } else {
-        navRightContainer.innerHTML = `
-          <button id="btn-next-action" onclick="nextQuestion()" class="w-full sm:w-auto px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-1 transition-all shadow-md shadow-indigo-100">
-            Siguiente ➡️
-          </button>
-        `;
-      }
-
-      // Barra de progreso superior
-      const pct = ((currentIndex + 1) / total) * 100;
-      document.getElementById('active-progress-bar').style.width = `${pct}%`;
-
-      updateQuickIndexActive();
-    }
-
-    function getMateriaColor(materia) {
-      switch (materia) {
-        case 'matematica': return 'bg-blue-100 text-blue-700 border border-blue-200';
-        case 'historia': return 'bg-amber-100 text-amber-700 border border-amber-200';
-        case 'ciencias': return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
-        case 'lenguaje': return 'bg-pink-100 text-pink-700 border border-pink-200';
-        case 'ingles': return 'bg-purple-100 text-purple-700 border border-purple-200';
-        default: return 'bg-slate-100 text-slate-700';
-      }
-    }
-
-    // RENDERIZAR OPCIONES
-    function renderOptions(q, pastAns) {
-      const container = document.getElementById('options-container');
+    function renderQuickIndex() {
+      const container = document.getElementById("quick-index-list");
       container.innerHTML = "";
-
-      q.opciones.forEach(opt => {
-        const letra = opt.charAt(0);
-        const btn = document.createElement('button');
-        btn.className = "w-full text-left px-5 py-4 rounded-2xl border-2 border-slate-100 hover:border-indigo-200 hover:bg-indigo-50/50 text-slate-700 font-bold transition-all flex items-center justify-between group active:scale-[0.99]";
-        
-        btn.innerHTML = `
-          <span>${opt}</span>
-          <span class="w-7 h-7 rounded-full border-2 border-slate-200 group-hover:border-indigo-400 flex items-center justify-center text-xs text-transparent group-hover:text-slate-400">✓</span>
-        `;
-
-        // Si ya está respondida (en Modo Práctica por ejemplo)
-        if (pastAns) {
-          btn.disabled = true;
-          if (letra === q.correcta) {
-            btn.className += " border-emerald-500 bg-emerald-50 text-emerald-800";
-          } else if (letra === pastAns.userResponse) {
-            btn.className += " border-rose-500 bg-rose-50 text-rose-800";
-          }
-        } else {
-          btn.onclick = () => selectOption(letra, q, btn);
-        }
-        
-        container.appendChild(btn);
-      });
-    }
-
-    // SELECCIÓN DE ALTERNATIVA
-    function selectOption(letra, q, btnElement) {
-      const isCorrect = (letra.toUpperCase() === q.correcta.toUpperCase());
-      
-      // Registrar respuesta
-      userAnswers[q.id] = {
-        userResponse: letra,
-        isCorrect: isCorrect
-      };
-
-      if (activeGameMode === 'practica') {
-        // Feedback inmediato
-        showAnswerFeedback(isCorrect, q.explicacion);
-        
-        const buttons = document.querySelectorAll('#options-container button');
-        buttons.forEach(btn => {
-          btn.disabled = true;
-          btn.classList.add('opacity-60');
-        });
-
-        btnElement.classList.remove('opacity-60');
-        if (isCorrect) {
-          btnElement.classList.add('border-emerald-500', 'bg-emerald-50/70', 'text-emerald-800');
-          playChirp(true);
-          incrementScore(10);
-        } else {
-          btnElement.classList.add('border-rose-500', 'bg-rose-50/70', 'text-rose-800');
-          playChirp(false);
-        }
-      } else {
-        // Modo Examen: Guardado silencioso, avance visual rápido
-        btnElement.classList.add('border-indigo-500', 'bg-indigo-50/50');
-        playChirp(true); // sonido discreto
-        setTimeout(() => {
-          nextQuestion();
-        }, 300);
-      }
-      
-      renderQuickIndexList();
-    }
-
-    // RESPUESTA DE DESARROLLO
-    function checkDesarrolloAnswer() {
-      const inputVal = document.getElementById('desarrollo-input').value.trim();
-      if (!inputVal) {
-        showToast("Por favor escribe una respuesta antes de guardar.");
-        return;
-      }
-
-      const q = currentQuestions[currentIndex];
-      const userAnsClean = inputVal.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      const correctAnsClean = q.correcta.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-      const isCorrect = (userAnsClean === correctAnsClean);
-
-      userAnswers[q.id] = {
-        userResponse: inputVal,
-        isCorrect: isCorrect
-      };
-
-      if (activeGameMode === 'practica') {
-        showAnswerFeedback(isCorrect, q.explicacion);
-        if (isCorrect) {
-          playChirp(true);
-          incrementScore(10);
-        } else {
-          playChirp(false);
-        }
-      } else {
-        showToast(`Respuesta guardada para la pregunta #${q.id}`);
-        setTimeout(() => {
-          nextQuestion();
-        }, 300);
-      }
-
-      renderQuickIndexList();
-    }
-
-    // MOSTRAR FEEDBACK
-    function showAnswerFeedback(isCorrect, explicacion) {
-      const panel = document.getElementById('feedback-panel');
-      const title = document.getElementById('feedback-title');
-      const desc = document.getElementById('feedback-desc');
-      const icon = document.getElementById('feedback-icon');
-
-      panel.classList.remove('hidden');
-
-      if (isCorrect) {
-        panel.className = "mt-6 p-4 rounded-2xl border border-emerald-200 bg-emerald-50 text-emerald-800 animate-pulse";
-        title.innerText = "¡Excelente Trabajo! ⭐";
-        desc.innerText = explicacion;
-        icon.innerText = "🎉";
-      } else {
-        panel.className = "mt-6 p-4 rounded-2xl border border-rose-200 bg-rose-50 text-rose-800";
-        title.innerText = "Revisemos con calma";
-        desc.innerText = explicacion;
-        icon.innerText = "💡";
-      }
-    }
-
-    function hideFeedback() {
-      document.getElementById('feedback-panel').classList.add('hidden');
-    }
-
-    // REVELAR PISTA EN MODO PRÁCTICA
-    function revealExplanation() {
-      const q = currentQuestions[currentIndex];
-      showAnswerFeedback(false, `Pista Didáctica: ${q.explicacion}`);
-    }
-
-    // CONTROL DE FLUJO
-    function nextQuestion() {
-      if (currentIndex < currentQuestions.length - 1) {
-        currentIndex++;
-        renderActiveQuestion();
-      } else {
-        showToast("¡Has llegado al final del bloque! Haz clic en el gran botón 'Terminar y Evaluar' para ver tus notas.");
-      }
-    }
-
-    // ANTERIOR
-    function prevQuestion() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        renderActiveQuestion();
-      }
-    }
-
-    function jumpToQuestion(index) {
-      currentIndex = index;
-      renderActiveQuestion();
-    }
-
-    // ÍNDICE DE NAVEGACIÓN RÁPIDA LATERAL
-    function renderQuickIndexList() {
-      const container = document.getElementById('quick-index-list');
-      container.innerHTML = "";
-
-      currentQuestions.forEach((q, idx) => {
-        const btn = document.createElement('button');
-        btn.id = `idx-btn-${idx}`;
-        
-        const hasBeenAnswered = userAnswers[q.id] !== undefined;
-        let borderAndBg = "bg-slate-50 hover:bg-slate-100 text-slate-700 border-2 border-transparent";
-        
-        if (hasBeenAnswered) {
-          borderAndBg = "bg-indigo-50 border-2 border-indigo-300 text-indigo-800";
-        }
-        if (idx === currentIndex) {
-          borderAndBg = "bg-indigo-600 text-white border-2 border-indigo-400 shadow-md";
-        }
-
-        btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center justify-between transition-all ${borderAndBg}`;
-        const badgeClass = q.tipo === 'alternativa' ? 'bg-indigo-100 text-indigo-700' : 'bg-pink-100 text-pink-700';
-
-        btn.innerHTML = `
-          <div class="flex items-center gap-2 truncate">
-            <span class="opacity-70">#${q.id}</span>
-            <span class="truncate font-semibold">${q.pregunta}</span>
-          </div>
-          <span class="text-[9px] px-1.5 py-0.5 rounded uppercase font-bold ${badgeClass}">${q.tipo.slice(0, 3)}</span>
-        `;
+      dbPreguntas.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.id = `quick-idx-btn-${idx}`;
         btn.onclick = () => jumpToQuestion(idx);
+        
+        let statusEmoji = "⚪";
+        if (userAnswers[idx] !== undefined) {
+          if (gameMode === "practica") {
+            statusEmoji = userAnswers[idx].isCorrect ? "✅" : "❌";
+          } else {
+            statusEmoji = "📝"; 
+          }
+        }
+
+        btn.className = "w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between bg-slate-50 hover:bg-slate-100 text-slate-700";
+        btn.innerHTML = `<span>Pregunta ${idx + 1} (${q.materia === 'matematica' ? '📐' : '🗺️'})</span> <span>${statusEmoji}</span>`;
         container.appendChild(btn);
       });
     }
 
-    function updateQuickIndexActive() {
-      currentQuestions.forEach((q, idx) => {
-        const btn = document.getElementById(`idx-btn-${idx}`);
-        if (btn) {
-          const hasBeenAnswered = userAnswers[q.id] !== undefined;
-          let cls = "w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center justify-between transition-all ";
-          if (idx === currentIndex) {
-            cls += "bg-indigo-600 text-white shadow-md border-2 border-indigo-400";
-          } else if (hasBeenAnswered) {
-            cls += "bg-indigo-50 border-2 border-indigo-300 text-indigo-800";
-          } else {
-            cls += "bg-slate-50 hover:bg-slate-100 text-slate-700 border-2 border-transparent";
-          }
-          btn.className = cls;
-        }
-      });
+    function jumpToQuestion(idx) {
+      currentQuestionIndex = idx;
+      showCurrentQuestion();
     }
 
-    // CALCULAR RESULTADO FINAL (Escala de notas al 60% de exigencia)
-    function showResultsTab() {
-      const totalInBlock = currentQuestions.length;
-      if (totalInBlock === 0) return;
+    function showCurrentQuestion() {
+      if (dbPreguntas.length === 0) return;
+      const q = dbPreguntas[currentQuestionIndex];
 
-      // Calcular cantidad de correctas
+      // Actualizar índice visual activo
+      dbPreguntas.forEach((_, idx) => {
+        const btn = document.getElementById(`quick-idx-btn-${idx}`);
+        if(btn) {
+          if(idx === currentQuestionIndex) {
+            btn.classList.add("border-2", "border-indigo-500", "bg-indigo-50");
+          } else {
+            btn.classList.remove("border-2", "border-indigo-500", "bg-indigo-50");
+          }
+        }
+      });
+
+      // Progreso y etiquetas
+      document.getElementById("index-lbl").innerText = `Pregunta ${currentQuestionIndex + 1} de ${dbPreguntas.length}`;
+      document.getElementById("subject-badge").innerText = q.materia === "matematica" ? "📐 MATEMÁTICA" : "🗺️ HISTORIA Y GEOGRAFÍA";
+      document.getElementById("active-progress-bar").style.width = `${((currentQuestionIndex + 1) / dbPreguntas.length) * 100}%`;
+
+      document.getElementById("question-text").innerText = q.pregunta;
+      document.getElementById("feedback-panel").classList.add("hidden");
+
+      // LOGICA DEDICADA: DIBUJAR MAPAS VECTORIALES CON CSS SEGUN LA PREGUNTA
+      const mapContainer = document.getElementById("map-vector-container");
+      mapContainer.innerHTML = "";
+      
+      if (q.vectorType) {
+        mapContainer.classList.remove("hidden");
+        let svgCode = "";
+        
+        if (q.vectorType === "globoCompleto" || q.vectorType === "latitud") {
+          svgCode = `
+            <div class="bg-indigo-900 rounded-2xl p-4 text-center text-white relative shadow-inner max-w-xs mx-auto">
+              <div class="w-32 h-32 rounded-full border-4 border-cyan-400 mx-auto relative overflow-hidden bg-blue-500 flex items-center justify-center">
+                <!-- Líneas de Red Geográfica -->
+                <div class="absolute inset-0 border-b border-white/30 top-1/4"></div>
+                <div class="absolute inset-0 border-b border-white/30 top-2/4"></div>
+                <div class="absolute inset-0 border-b border-white/30 top-3/4"></div>
+                <div class="absolute top-0 bottom-0 left-1/4 w-0 border-l border-white/30"></div>
+                <div class="absolute top-0 bottom-0 left-2/4 w-0 border-l border-white/30"></div>
+                <div class="absolute top-0 bottom-0 left-3/4 w-0 border-l border-white/30"></div>
+                <span class="text-xs font-black bg-slate-900/80 px-1 rounded z-10">Punto P 🎯</span>
+              </div>
+              <p class="text-[10px] text-cyan-200 mt-2 font-mono">Simulador de Coordenadas Geográficas (4° Básico)</p>
+            </div>`;
+        } else if (q.vectorType === "ecuador") {
+          svgCode = `
+            <div class="bg-indigo-950 rounded-2xl p-4 text-center text-white max-w-xs mx-auto">
+              <div class="w-32 h-32 rounded-full border-4 border-slate-300 mx-auto relative bg-sky-600 flex items-center">
+                <div class="w-full h-1 bg-rose-500 absolute z-20 pulse-ring"></div>
+                <span class="absolute right-1 text-[9px] bg-rose-600 text-white font-bold px-1 rounded">Línea del Ecuador (0°)[cite: 1]</span>
+                <div class="w-full text-center text-[11px] font-bold text-sky-200 uppercase mt-12">Hemisferio Sur[cite: 1]</div>
+                <div class="w-full text-center text-[11px] font-bold text-sky-200 uppercase mb-16 absolute top-2">Hemisferio Norte[cite: 1]</div>
+              </div>
+            </div>`;
+        } else if (q.vectorType === "greenwich") {
+          svgCode = `
+            <div class="bg-indigo-950 rounded-2xl p-4 text-center text-white max-w-xs mx-auto">
+              <div class="w-32 h-32 rounded-full border-4 border-slate-300 mx-auto relative bg-emerald-600 flex justify-center">
+                <div class="h-full w-1 bg-amber-400 absolute z-20"></div>
+                <span class="absolute top-1 text-[9px] bg-amber-500 text-slate-950 font-bold px-1 rounded">Greenwich (0°)[cite: 1]</span>
+                <span class="absolute left-2 top-1/2 text-[9px] font-bold text-emerald-100">Oeste[cite: 1]</span>
+                <span class="absolute right-2 top-1/2 text-[9px] font-bold text-emerald-100">Este[cite: 1]</span>
+              </div>
+            </div>`;
+        } else if (q.vectorType === "capricornio" || q.vectorType === "zonas") {
+          svgCode = `
+            <div class="bg-slate-900 rounded-2xl p-3 text-center text-white max-w-xs mx-auto text-xs">
+              <div class="space-y-1 font-mono text-[10px]">
+                <div class="bg-blue-900/50 p-1 border border-blue-400 rounded">🔵 ZONA FRÍA (Polo Norte)[cite: 1]</div>
+                <div class="bg-green-900/50 p-1 border border-green-400 rounded">🟢 ZONA TEMPLADA (Norte)[cite: 1]</div>
+                <div class="bg-amber-600/50 p-1 border border-amber-400 rounded font-bold text-amber-200">🟡 ZONA CÁLIDA O TROPICAL (Ecuador)[cite: 1]</div>
+                <div class="bg-green-900/50 p-1 border border-green-400 rounded">🟢 ZONA TEMPLADA (Sur)[cite: 1]</div>
+                <div class="bg-blue-900/50 p-1 border border-blue-400 rounded">🔵 ZONA FRÍA (Polo Sur)[cite: 1]</div>
+              </div>
+            </div>`;
+        } else if (q.vectorType === "chileHemisferio") {
+          svgCode = `
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-3 text-center max-w-xs mx-auto">
+              <div class="text-3xl">🇨🇱 🗺️</div>
+              <p class="text-xs text-slate-600 font-bold mt-1">Mapa Político de América del Sur[cite: 1]</p>
+              <div class="h-1 bg-slate-300 my-2"></div>
+              <span class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded font-mono font-bold">Ubicado abajo del Ecuador[cite: 1]</span>
+            </div>`;
+        }
+        
+        mapContainer.innerHTML = svgCode;
+      } else {
+        mapContainer.classList.add("hidden");
+      }
+
+      // Alternar Contenedor entre Selección Múltiple o Caja de Texto
+      const optionsContainer = document.getElementById("options-container");
+      const desarrolloContainer = document.getElementById("desarrollo-container");
+      
+      optionsContainer.innerHTML = "";
+      desarrolloContainer.classList.add("hidden");
+
+      if (q.tipo === "alternativa") {
+        optionsContainer.classList.remove("hidden");
+        q.opciones.forEach(opt => {
+          const letter = opt.charAt(0);
+          const btn = document.createElement("button");
+          btn.onclick = () => selectAlternativa(letter);
+          btn.className = "w-full text-left px-4 py-3 rounded-xl border-2 border-slate-100 hover:border-indigo-400 hover:bg-indigo-50/50 font-medium transition-all text-sm text-slate-700 flex items-center gap-2";
+          
+          // Mantener estado si ya respondió
+          if (userAnswers[currentQuestionIndex] !== undefined && userAnswers[currentQuestionIndex].chosen === letter) {
+            btn.className = "w-full text-left px-4 py-3 rounded-xl border-2 border-indigo-600 bg-indigo-50 font-bold text-sm text-indigo-900 flex items-center gap-2";
+          }
+
+          btn.innerText = opt;
+          optionsContainer.appendChild(btn);
+        });
+      } else if (q.tipo === "desarrollo") {
+        optionsContainer.classList.add("hidden");
+        desarrolloContainer.classList.remove("hidden");
+        const input = document.getElementById("desarrollo-input");
+        input.value = userAnswers[currentQuestionIndex] !== undefined ? userAnswers[currentQuestionIndex].chosen : "";
+      }
+
+      // Configurar boton derecho (Siguiente o Finalizar)
+      const nextBtn = document.getElementById("btn-next-action");
+      if (currentQuestionIndex === dbPreguntas.length - 1) {
+        nextBtn.innerText = "🏁 Ver Reporte";
+        nextBtn.onclick = showResultsTab;
+        nextBtn.className = "px-4 py-2 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-black rounded-xl text-xs shadow-md uppercase";
+      } else {
+        nextBtn.innerText = "Siguiente ➡️";
+        nextBtn.onclick = nextQuestion;
+        nextBtn.className = "px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs shadow-sm";
+      }
+    }
+
+    function selectAlternativa(letter) {
+      const q = dbPreguntas[currentQuestionIndex];
+      const isCorrect = (letter === q.correcta);
+      
+      userAnswers[currentQuestionIndex] = {
+        chosen: letter,
+        isCorrect: isCorrect
+      };
+
+      calculateScoreInLive();
+      renderQuickIndex();
+      showCurrentQuestion();
+
+      if (gameMode === "practica") {
+        triggerFeedbackPanel(isCorrect, q.explicacion);
+      }
+    }
+
+    function checkDesarrolloAnswer() {
+      const q = dbPreguntas[currentQuestionIndex];
+      const rawVal = document.getElementById("desarrollo-input").value;
+      const cleanVal = rawVal.trim().toUpperCase().replace(/[\.\-]/g, ""); 
+      const cleanCorrect = q.correcta.trim().toUpperCase().replace(/[\.\-]/g, "");
+
+      const isCorrect = (cleanVal === cleanCorrect);
+      
+      userAnswers[currentQuestionIndex] = {
+        chosen: rawVal,
+        isCorrect: isCorrect
+      };
+
+      calculateScoreInLive();
+      renderQuickIndex();
+      
+      triggerFeedbackPanel(isCorrect, q.explicacion);
+    }
+
+    function triggerFeedbackPanel(isCorrect, explanation) {
+      const panel = document.getElementById("feedback-panel");
+      const icon = document.getElementById("feedback-icon");
+      const title = document.getElementById("feedback-title");
+      const desc = document.getElementById("feedback-desc");
+
+      panel.classList.remove("hidden");
+      if(isCorrect) {
+        panel.className = "mt-4 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900";
+        icon.innerText = "🎉";
+        title.innerText = "¡Excelente Trabajo, Noemí!";
+        desc.innerText = explanation;
+      } else {
+        panel.className = "mt-4 p-4 rounded-xl border border-rose-200 bg-rose-50 text-rose-900";
+        icon.innerText = "💡";
+        title.innerText = "¡Sigue intentando!";
+        desc.innerText = `Pista Didáctica: ${explanation}`;
+      }
+    }
+
+    function revealExplanation() {
+      const q = dbPreguntas[currentQuestionIndex];
+      triggerFeedbackPanel(false, q.explicacion);
+    }
+
+    function calculateScoreInLive() {
+      let score = 0;
+      Object.keys(userAnswers).forEach(k => {
+        if (userAnswers[k].isCorrect) score++;
+      });
+      document.getElementById("score-lbl").innerText = score;
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showCurrentQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < dbPreguntas.length - 1) {
+        currentQuestionIndex++;
+        showCurrentQuestion();
+      }
+    }
+
+    function showResultsTab() {
+      document.getElementById("trivia-active-container").classList.add("hidden");
+      const reportContainer = document.getElementById("report-card-container");
+      reportContainer.classList.remove("hidden");
+
+      // Setear metadatos del reporte
+      document.getElementById("report-student-name").innerText = studentData.name || "Noemí";
+      document.getElementById("card-fullname").innerText = studentData.name || "Noemí Arellano[cite: 1]";
+      document.getElementById("card-grade").innerText = studentData.grade || "4° Básico";
+      document.getElementById("card-date").innerText = studentData.date || "Hoy";
+
+      let totalQuestions = dbPreguntas.length;
       let corrects = 0;
-      currentQuestions.forEach(q => {
-        const record = userAnswers[q.id];
-        if (record && record.isCorrect) {
+
+      dbPreguntas.forEach((q, idx) => {
+        if (userAnswers[idx] && userAnswers[idx].isCorrect) {
           corrects++;
         }
       });
 
-      const percentage = (corrects / totalInBlock);
-      const percentageScore = Math.round(percentage * 100);
-
-      // Algoritmo de Escala Chilena (60% de exigencia)
-      // Nota de 1.0 a 7.0
-      let notaFinal = 1.0;
-      if (percentage < 0.6) {
-        notaFinal = 1.0 + (3.0 * (percentage / 0.6));
-      } else {
-        notaFinal = 4.0 + (3.0 * ((percentage - 0.6) / 0.4));
-      }
-      notaFinal = Math.round(notaFinal * 10) / 10; // Redondear a un decimal
-
-      // Llenar Ficha del Reporte
-      document.getElementById('report-student-name').innerText = studentInfo.nombre || "Estudiante";
-      document.getElementById('card-fullname').innerText = `${studentInfo.nombre} ${studentInfo.apellido}` || "No registrado";
-      document.getElementById('card-grade').innerText = studentInfo.curso;
-      document.getElementById('card-date').innerText = studentInfo.fecha;
-      document.getElementById('card-subject').innerText = selectedMateriaFilter;
-
-      // Nota y feedback visual
-      const finalGradeLbl = document.getElementById('final-grade-lbl');
-      finalGradeLbl.innerText = notaFinal.toFixed(1);
+      // Cálculo de Nota bajo la Escala de Calificación de Chile (Exigencia del 60%)
+      let nota = 1.0;
+      let porcentajeLogro = (corrects / totalQuestions);
       
-      const feedbackText = document.getElementById('grade-feedback-text');
-      if (notaFinal >= 4.0) {
-        finalGradeLbl.className = "text-5xl font-extrabold text-emerald-600 title-font block";
-        feedbackText.innerText = "¡Aprobado con éxito! Sigue así.";
-        feedbackText.className = "text-xs text-emerald-600 font-medium";
+      if (porcentajeLogro < 0.6) {
+        nota = 1.0 + 3.0 * (porcentajeLogro / 0.6);
       } else {
-        finalGradeLbl.className = "text-5xl font-extrabold text-rose-600 title-font block";
-        feedbackText.innerText = "Necesitas reforzar los contenidos.";
-        feedbackText.className = "text-xs text-rose-500 font-medium";
+        nota = 4.0 + 3.0 * ((porcentajeLogro - 0.6) / 0.4);
+      }
+      
+      nota = Math.round(nota * 10) / 10; // Redondear a un decimal
+
+      document.getElementById("final-grade-lbl").innerText = nota.toFixed(1);
+      document.getElementById("corrects-count-lbl").innerText = `${corrects} / ${totalQuestions}`;
+
+      // Configurar Estrellas y colores según la nota obtenida
+      const gradeLabel = document.getElementById("final-grade-lbl");
+      const starsRow = document.getElementById("stars-row");
+      if (nota >= 6.0) {
+        gradeLabel.className = "text-4xl font-black text-emerald-600 block title-font animate-bounce";
+        starsRow.innerText = "⭐⭐⭐⭐⭐";
+      } else if (nota >= 4.0) {
+        gradeLabel.className = "text-4xl font-black text-amber-600 block title-font";
+        starsRow.innerText = "⭐⭐⭐⚪⚪";
+      } else {
+        gradeLabel.className = "text-4xl font-black text-rose-600 block title-font";
+        starsRow.innerText = "⭐⚪⚪⚪⚪";
       }
 
-      document.getElementById('corrects-count-lbl').innerText = `${corrects} / ${totalInBlock}`;
-      document.getElementById('corrects-percentage-lbl').innerText = `${percentageScore}% de logro`;
-
-      // Renderizar estrellas de recompensa
-      const starsRow = document.getElementById('stars-row');
-      if (notaFinal >= 6.5) starsRow.innerText = "⭐⭐⭐⭐⭐";
-      else if (notaFinal >= 5.5) starsRow.innerText = "⭐⭐⭐⭐";
-      else if (notaFinal >= 4.5) starsRow.innerText = "⭐⭐⭐";
-      else if (notaFinal >= 4.0) starsRow.innerText = "⭐⭐";
-      else starsRow.innerText = "⭐";
-
-      // Desglose de preguntas contestadas y explicaciones
-      const detailedList = document.getElementById('results-detailed-list');
+      // Renderizar el desglose pedagógico paso a paso
+      const detailedList = document.getElementById("results-detailed-list");
       detailedList.innerHTML = "";
 
-      currentQuestions.forEach((q, i) => {
-        const record = userAnswers[q.id];
-        const isAnsCorrect = record ? record.isCorrect : false;
-        const respText = record ? record.userResponse : "No contestada";
-        
-        const card = document.createElement('div');
-        card.className = "p-5 rounded-2xl border transition-all " +
-                         (isAnsCorrect ? "border-emerald-100 bg-emerald-50/40" : "border-rose-100 bg-rose-50/40");
+      dbPreguntas.forEach((q, idx) => {
+        const item = document.createElement("div");
+        const answered = userAnswers[idx];
+        const isCorrect = answered && answered.isCorrect;
 
-        card.innerHTML = `
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-bold uppercase tracking-wider ${getMateriaColor(q.materia)} px-2.5 py-0.5 rounded-full">
-              ${q.materia}
-            </span>
-            <span class="text-xs font-bold ${isAnsCorrect ? "text-emerald-700" : "text-rose-700"}">
-              ${isAnsCorrect ? "✔️ Correcta" : "❌ Incorrecta"}
-            </span>
-          </div>
-          <p class="font-bold text-slate-800 text-sm md:text-md mb-2">Pregunta ${i+1}: ${q.pregunta}</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs mb-3 text-slate-600">
-            <div>Tu respuesta: <strong class="${isAnsCorrect ? "text-emerald-600" : "text-rose-600"}">${respText}</strong></div>
-            <div>Respuesta correcta: <strong class="text-emerald-600">${q.correcta}</strong></div>
-          </div>
-          <div class="pt-2 border-t border-slate-200 text-xs font-medium text-slate-500">
-            💡 <strong>Explicación:</strong> ${q.explicacion}
-          </div>
+        item.className = `p-3.5 rounded-xl border text-xs font-medium ${isCorrect ? 'bg-emerald-50/70 border-emerald-200' : 'bg-rose-50/70 border-rose-200'}`;
+        item.innerHTML = `
+          <p class="font-bold text-slate-800">Pregunta ${idx + 1}: ${q.pregunta}</p>
+          <p class="mt-1">Respuesta dada: <strong class="${isCorrect ? 'text-emerald-700' : 'text-rose-700'}">${answered ? answered.chosen : 'No contestada'}</strong></p>
+          <p class="text-slate-500 mt-1 font-sans">💡 Explicación pedagógica: ${q.explicacion}</p>
         `;
-        detailedList.appendChild(card);
+        detailedList.appendChild(item);
       });
-
-      // Transición a la pantalla de reporte
-      document.getElementById('trivia-active-container').classList.add('hidden');
-      document.getElementById('report-card-container').classList.remove('hidden');
-      window.scrollTo({ top: 300, behavior: 'smooth' });
     }
 
-    // REINICIAR EXAMEN
     function restartExam() {
-      regenerateRandomEvaluation();
-    }
-
-    function resetAnswers() {
-      userAnswers = {};
-      score = 0;
-      document.getElementById('score-lbl').innerText = score;
-    }
-
-    function incrementScore(val) {
-      score += val;
-      document.getElementById('score-lbl').innerText = score;
-    }
-
-    // ACTUALIZAR JSON EN VIVO
-    function updateJSONBlock() {
-      const cleaned = dbPreguntas.map(q => {
-        return {
-          id: q.id,
-          tipo: q.tipo,
-          pregunta: q.pregunta,
-          ...(q.opciones ? { opciones: q.opciones } : {}),
-          correcta: q.correcta,
-          explicacion: q.explicacion
-        };
-      });
-      document.getElementById('json-preview-block').innerText = JSON.stringify(cleaned, null, 2);
-    }
-
-    // EXPORTACIÓN JSON
-    function downloadJSON() {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(document.getElementById('json-preview-block').innerText);
-      const dlAnchorElem = document.createElement('a');
-      dlAnchorElem.setAttribute("href", dataStr);
-      dlAnchorElem.setAttribute("download", "preguntas_globales_4_basico_completa.json");
-      dlAnchorElem.click();
-      showToast("¡Archivo JSON listo para GitHub! 💾");
-    }
-
-    function copyToClipboard() {
-      const text = document.getElementById('json-preview-block').innerText;
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-      try {
-        document.execCommand('copy');
-        showToast("¡JSON copiado con éxito! 📋");
-      } catch (err) {
-        showToast("Error al copiar. Selecciona manualmente.");
-      }
-      document.body.removeChild(textArea);
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.innerText = msg;
-      toast.className = "fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl font-semibold text-sm transition-all transform translate-y-0 opacity-100 z-50";
-      setTimeout(() => {
-        toast.className = "fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl font-semibold text-sm transition-all transform translate-y-20 opacity-0 z-50";
-      }, 3000);
-    }
-
-    // CHIRP AUDIO FEEDBACK
-    function playChirp(correct) {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        const now = ctx.currentTime;
-        if (correct) {
-          osc.frequency.setValueAtTime(523.25, now);
-          osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
-          gain.gain.setValueAtTime(0.12, now);
-          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-          osc.start(now);
-          osc.stop(now + 0.3);
-        } else {
-          osc.frequency.setValueAtTime(220, now);
-          osc.frequency.exponentialRampToValueAtTime(110, now + 0.2);
-          gain.gain.setValueAtTime(0.15, now);
-          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-          osc.start(now);
-          osc.stop(now + 0.2);
-        }
-      } catch (e) {}
+      resetStateKeepingFilters();
     }
   </script>
 </body>
